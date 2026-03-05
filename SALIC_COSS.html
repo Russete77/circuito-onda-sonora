@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Projeto COSS – Lei de Incentivo ao Esporte</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy: #1B2A4A;
+  --marsala: #8B2252;
+  --white: #FFFFFF;
+  --light: #F5F5F5;
+  --gray: #555555;
+}
+body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+@media print {
+  body { background: white; }
+  .page { margin: 0; width: 100%; page-break-after: always; }
+  .no-print { display: none; }
+}
+
+/* ===== CABEÇALHO ===== */
+.doc-header {
+  background: var(--navy);
+  padding: 22px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.doc-header-logo { display: flex; align-items: center; gap: 14px; }
+.doc-header-title { color: white; font-size: 11px; font-weight: 300; opacity: 0.65; text-transform: uppercase; letter-spacing: 2px; margin-top: 2px; }
+.doc-header-right { text-align: right; }
+.doc-header-right .doc-type { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 2px; }
+.doc-header-right .doc-ref { font-size: 10px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+
+/* ===== CAPA DO PROJETO ===== */
+.cover-proj {
+  min-height: 297mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-proj-bg {
+  position: absolute; inset: 0;
+  background-image: url('imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (2).jpeg');
+  background-size: cover;
+  background-position: center 20%;
+}
+.cover-proj-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(27,42,74,0.95) 55%, rgba(139,34,82,0.6) 100%);
+}
+.cover-proj-content {
+  position: relative; z-index: 2;
+  padding: 56px 40px;
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cover-proj-badge {
+  display: inline-block;
+  background: var(--marsala);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 5px 14px;
+  border-radius: 3px;
+  margin-bottom: 28px;
+}
+.cover-proj h1 {
+  color: white;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.cover-proj h2 {
+  color: rgba(255,255,255,0.65);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.cover-proj-law {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-top: 36px;
+}
+.cover-proj-law p { font-size: 11px; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.cover-proj-law p strong { color: white; }
+.cover-proj-bottom { color: rgba(255,255,255,0.4); font-size: 10px; line-height: 1.8; }
+.cover-proj-bottom strong { color: rgba(255,255,255,0.7); }
+
+/* ===== SEÇÕES DE CONTEÚDO ===== */
+.page-content { padding: 36px 40px; }
+.section-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 46px; height: 4px;
+  background: var(--marsala);
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.section-subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--marsala);
+  margin: 22px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.section-text {
+  font-size: 11.5px;
+  color: #444;
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+.section-text strong { color: var(--navy); }
+
+/* ===== TABELAS ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 20px;
+  font-size: 11px;
+}
+th {
+  background: var(--navy);
+  color: white;
+  padding: 9px 12px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  vertical-align: top;
+}
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:last-child td { border-bottom: 2px solid var(--marsala); }
+.td-highlight { font-weight: 700; color: var(--navy); }
+.td-value { font-weight: 700; color: var(--marsala); }
+
+/* ===== CARDS ===== */
+.cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+.cards-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+.card {
+  border-radius: 8px;
+  padding: 16px;
+  background: #f8f8f8;
+  border-left: 4px solid var(--navy);
+}
+.card.marsala-border { border-left-color: var(--marsala); }
+.card-title { font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px; }
+.card-value { font-size: 22px; font-weight: 900; color: var(--navy); }
+.card-value.marsala { color: var(--marsala); }
+.card-desc { font-size: 10.5px; color: #666; margin-top: 4px; line-height: 1.5; }
+
+/* ===== HIGHLIGHT BOX ===== */
+.highlight-box {
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  color: white;
+}
+.highlight-box.marsala-box { background: var(--marsala); }
+.highlight-box h4 { font-size: 13px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.highlight-box p { font-size: 11.5px; color: rgba(255,255,255,0.78); line-height: 1.8; }
+.highlight-box ul { font-size: 11.5px; color: rgba(255,255,255,0.78); line-height: 2; padding-left: 16px; }
+
+/* ===== CRONOGRAMA ===== */
+.cronograma { margin: 14px 0; }
+.crono-item {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: flex-start;
+}
+.crono-data {
+  min-width: 110px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--marsala);
+  background: #f8f0f4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+.crono-desc { font-size: 11.5px; color: #444; line-height: 1.6; }
+.crono-desc strong { color: var(--navy); }
+
+/* ===== ORÇAMENTO ===== */
+.orcamento-total {
+  margin-top: 16px;
+  background: linear-gradient(135deg, var(--navy), var(--marsala));
+  border-radius: 8px;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.orca-label { font-size: 11px; font-weight: 700; opacity: 0.75; text-transform: uppercase; letter-spacing: 1px; }
+.orca-value { font-size: 26px; font-weight: 900; }
+
+/* ===== APELOS LEGAIS ===== */
+.legal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--navy);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin: 4px 4px 4px 0;
+}
+.legal-badge.marsala-badge { background: var(--marsala); }
+
+/* ===== RODAPÉ ===== */
+.doc-footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: var(--navy);
+  padding: 9px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doc-footer-text { font-size: 9px; color: rgba(255,255,255,0.45); }
+.doc-footer-page { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.6); }
+
+/* ===== ASSINATURA ===== */
+.signature-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 28px;
+}
+.sig-field { text-align: center; }
+.sig-line { border-top: 1.5px solid var(--navy); padding-top: 8px; margin-top: 36px; }
+.sig-name { font-size: 12px; font-weight: 700; color: var(--navy); }
+.sig-role { font-size: 10px; color: #888; margin-top: 2px; }
+
+/* ===== NAV ===== */
+.nav { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 999; }
+.nav button { background: var(--navy); color: white; border: none; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; }
+.nav .print-btn { background: var(--marsala); }
+.list-item { font-size: 11.5px; color: #444; line-height: 1.9; padding-left: 4px; }
+.list-item::before { content: "• "; color: var(--marsala); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav no-print">
+  <button class="print-btn" onclick="window.print()">Salvar como PDF</button>
+</div>
+
+<!-- ==================== PÁGINA 1: CAPA ==================== -->
+<div class="page cover-proj">
+  <div class="cover-proj-bg"></div>
+  <div class="cover-proj-overlay"></div>
+  <div class="cover-proj-content">
+    <div>
+      <div class="cover-proj-badge">Lei de Incentivo ao Esporte – Lei nº 11.438/2006</div>
+      <h1>Circuito<br>Onda Sonora<br>Saquarema</h1>
+      <h2>Projeto de Captação de Recursos</h2>
+      <div class="cover-proj-law">
+        <p>
+          <strong>Modalidade:</strong> Manifestação Desportiva de Criação Nacional<br>
+          <strong>Enquadramento:</strong> Art. 1°, §1°, inciso I – Lei 11.438/2006<br>
+          <strong>Benefício Fiscal:</strong> Dedução de até 1% do IRPJ devido (Pessoa Jurídica)<br>
+          <strong>Proponente:</strong> COSS – Circuito Onda Sonora Saquarema<br>
+          <strong>Data de Realização:</strong> 18 de Julho de 2026 (Sábado) · Saquarema – RJ<br>
+          <strong>Período de Captação:</strong> Abril – Junho 2026
+        </p>
+      </div>
+    </div>
+    <div class="cover-proj-bottom">
+      <strong>Organizadoras:</strong> Fernanda Koenigsdorf &amp; Paula Bravo<br>
+      <strong>Contato:</strong> contato@ondasonora.com.br<br>
+      <strong>Apoio Institucional:</strong> Prefeitura Municipal de Saquarema – RJ
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 2: IDENTIFICAÇÃO DO PROPONENTE ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <text x="25" y="8.5" text-anchor="middle" fill="white" font-size="4.5" font-family="Arial" font-weight="700" letter-spacing="1">ONDA SONORA</text>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 01</div>
+      <div class="doc-ref">Identificação do Proponente</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Identificação do Proponente</div>
+
+    <div class="section-subtitle">Dados da Organização</div>
+    <table>
+      <tr><th style="width:35%">Campo</th><th>Informação</th></tr>
+      <tr><td class="td-highlight">Razão Social / Nome</td><td>COSS – Circuito Onda Sonora Saquarema</td></tr>
+      <tr><td class="td-highlight">CNPJ / CPF</td><td>A confirmar junto à Receita Federal</td></tr>
+      <tr><td class="td-highlight">Tipo de Entidade</td><td>Organização de eventos esportivos / Pessoa Física ou Jurídica proponente</td></tr>
+      <tr><td class="td-highlight">Endereço</td><td>Saquarema – RJ, CEP a confirmar</td></tr>
+      <tr><td class="td-highlight">Telefone / E-mail</td><td>contato@ondasonora.com.br</td></tr>
+      <tr><td class="td-highlight">Responsável Legal</td><td>Fernanda Koenigsdorf</td></tr>
+      <tr><td class="td-highlight">Co-Responsável</td><td>Paula Bravo</td></tr>
+    </table>
+
+    <div class="section-subtitle">Breve Histórico</div>
+    <p class="section-text">
+      O <strong>Circuito Onda Sonora Saquarema (COSS)</strong> é um projeto esportivo e cultural concebido por Fernanda Koenigsdorf e Paula Bravo, profissionais com experiência em organização de eventos esportivos populares na Região dos Lagos do Estado do Rio de Janeiro.
+    </p>
+    <p class="section-text">
+      O evento une corrida de rua com manifestação musical ao vivo (DJ Set), propondo um modelo moderno de ativação esportiva comunitária que celebra a identidade de Saquarema como <strong>"Cidade do Esporte e Bem-Estar"</strong>, referência no cenário nacional do surf, triathlon e esportes de natureza.
+    </p>
+
+    <div class="section-subtitle">Capacidade Técnica</div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-title">Experiência em Eventos</div>
+        <div class="card-desc">Organização de eventos esportivos populares na Região dos Lagos, com vivência em logística, comunicação e mobilização comunitária.</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Rede de Parceiros</div>
+        <div class="card-desc">Articulação com prefeitura, secretarias, academias locais, comércio, profissionais de saúde e comunicação da região de Saquarema.</div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte</div>
+    <div class="doc-footer-page">02</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 3: DESCRIÇÃO DO PROJETO ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 02</div>
+      <div class="doc-ref">Descrição do Projeto</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Descrição do Projeto</div>
+
+    <div class="section-subtitle">Síntese</div>
+    <p class="section-text">
+      O <strong>Circuito Onda Sonora Saquarema – COSS</strong> é um evento esportivo-cultural de acesso gratuito à comunidade, que integra <strong>corrida de rua de 5km, aulas coletivas de atividade física (funcional, yoga, aquecimento)</strong> e <strong>DJ Set ao vivo</strong>, com foco em democratização do esporte, saúde preventiva e desenvolvimento do turismo esportivo em Saquarema – RJ.
+    </p>
+    <p class="section-text">
+      Realizado na <strong>Praça do Coração</strong>, ponto central da cidade, o evento mobiliza 500 a 1.000 participantes em 7 horas de programação contínua, das 17h às 00h, em Julho de 2026.
+    </p>
+
+    <div class="section-subtitle">Objetivo Geral</div>
+    <p class="section-text">
+      Promover o acesso gratuito ao esporte, à saúde e ao bem-estar para a população de Saquarema e região, consolidando o município como referência em eventos esportivos populares sustentáveis no Estado do Rio de Janeiro.
+    </p>
+
+    <div class="section-subtitle">Objetivos Específicos</div>
+    <div>
+      <div class="list-item">Realizar corrida de rua de 5km com cronometragem eletrônica oficial para 500+ atletas.</div>
+      <div class="list-item">Oferecer atividades físicas coletivas gratuitas (funcional, yoga, alongamento) para toda comunidade.</div>
+      <div class="list-item">Promover educação ambiental com política de lixo zero, copos reutilizáveis e coleta seletiva.</div>
+      <div class="list-item">Garantir acessibilidade e inclusão de idosos, crianças e Pessoas com Deficiência (PcDs).</div>
+      <div class="list-item">Fomentar o turismo esportivo e a economia criativa local através de espaços para comércio e gastronomia.</div>
+      <div class="list-item">Integrar ações de saúde preventiva (aferição de pressão, glicose, orientação nutricional).</div>
+      <div class="list-item">Tornar o COSS um evento anual no calendário oficial do Município de Saquarema.</div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:20px">
+      <h4>Conceito do Evento</h4>
+      <p>Mais do que uma corrida, o COSS é uma <strong>experiência coletiva de energia positiva</strong>: o pulso da música eletrônica que embala cada atleta, a força das ondas do mar de Saquarema que inspira o movimento, e a integração social que transforma a praça pública em palco de bem-estar para todos.</p>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte</div>
+    <div class="doc-footer-page">03</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 4: JUSTIFICATIVA ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 03</div>
+      <div class="doc-ref">Justificativa e Impacto</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Justificativa e Impacto Social</div>
+
+    <div class="section-subtitle">Relevância Social e Esportiva</div>
+    <p class="section-text">
+      Segundo a Organização Mundial da Saúde (OMS), o <strong>sedentarismo é o quarto maior fator de risco de mortalidade global</strong>. No Brasil, o Ministério do Esporte aponta que eventos populares de corrida de rua são um dos instrumentos mais eficazes para democratizar a prática esportiva, especialmente em municípios de médio porte como Saquarema.
+    </p>
+    <p class="section-text">
+      Saquarema é reconhecida internacionalmente pelo surf e pelo triathlon, sendo palco de etapas do <strong>WSL (World Surf League)</strong> e campeonatos nacionais. O COSS complementa esse ecossistema esportivo com uma proposta inclusiva, voltada para o cidadão comum, não apenas para atletas de alto rendimento.
+    </p>
+
+    <div class="cards-grid-3">
+      <div class="card">
+        <div class="card-title">Participantes</div>
+        <div class="card-value">500+</div>
+        <div class="card-desc">Atletas e participantes diretos na 1ª edição</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Público Total</div>
+        <div class="card-value marsala">1.000+</div>
+        <div class="card-desc">Público presente no evento (atletas + acompanhantes)</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Duração</div>
+        <div class="card-value">7h</div>
+        <div class="card-desc">Horas de programação esportiva e cultural</div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Impactos Mensuráveis</div>
+    <table>
+      <tr><th>Dimensão</th><th>Impacto Esperado</th><th>Indicador</th></tr>
+      <tr><td class="td-highlight">Saúde</td><td>Incentivo à prática regular de atividade física</td><td>Nº de novos praticantes pós-evento</td></tr>
+      <tr><td class="td-highlight">Social</td><td>Integração comunitária e valorização do espaço público</td><td>Pesquisa de satisfação pós-evento</td></tr>
+      <tr><td class="td-highlight">Econômico</td><td>Geração de renda para ambulantes, academias e lojas</td><td>Estimativa de R$ 150–300 mil em giro local</td></tr>
+      <tr><td class="td-highlight">Turístico</td><td>Atração de atletas de outras cidades e regiões</td><td>% de participantes não-residentes</td></tr>
+      <tr><td class="td-highlight">Ambiental</td><td>Educação ambiental in loco, lixo zero</td><td>Kg de resíduos coletados seletivamente</td></tr>
+      <tr><td class="td-highlight">Cultural</td><td>Valorização da identidade de Saquarema como cidade do esporte</td><td>Cobertura de mídia e redes sociais</td></tr>
+    </table>
+
+    <div class="highlight-box marsala-box">
+      <h4>Alinhamento com Políticas Públicas</h4>
+      <ul>
+        <li>Política Nacional do Esporte – Decreto 9.825/2019</li>
+        <li>Programa Esporte e Lazer da Cidade (PELC) – ME</li>
+        <li>ODS 3 (Saúde e Bem-Estar) e ODS 11 (Cidades Sustentáveis) – ONU</li>
+        <li>Plano Municipal de Esporte e Lazer de Saquarema</li>
+      </ul>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte</div>
+    <div class="doc-footer-page">04</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 5: METAS E PÚBLICO ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 04</div>
+      <div class="doc-ref">Metas, Público e Acessibilidade</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Metas, Público e Acessibilidade</div>
+
+    <div class="section-subtitle">Metas Quantitativas</div>
+    <table>
+      <tr><th>Meta</th><th>Quantidade</th><th>Público-alvo</th></tr>
+      <tr><td class="td-highlight">Atletas inscritos na corrida 5km</td><td class="td-value">500</td><td>Comunidade local e região</td></tr>
+      <tr><td class="td-highlight">Participantes atividades físicas coletivas</td><td class="td-value">300</td><td>Toda comunidade – livre</td></tr>
+      <tr><td class="td-highlight">Público total no evento</td><td class="td-value">1.000</td><td>Famílias, turistas, comunidade</td></tr>
+      <tr><td class="td-highlight">Kits gratuitos distribuídos</td><td class="td-value">100</td><td>Mínimo 20% gratuidades (SALIC)</td></tr>
+      <tr><td class="td-highlight">Ações de saúde preventiva</td><td class="td-value">200</td><td>Aferição BP, glicose, orientação</td></tr>
+      <tr><td class="td-highlight">Profissionais locais contratados</td><td class="td-value">30+</td><td>Educadores físicos, DJs, staff</td></tr>
+    </table>
+
+    <div class="section-subtitle">Público Beneficiário</div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-title">Perfil Primário</div>
+        <div class="card-desc">
+          Corredores amadores e iniciantes de Saquarema e municípios vizinhos (Araruama, São Pedro da Aldeia, Niterói, Rio de Janeiro). Faixa etária: 16 a 60 anos. Homens e mulheres.
+        </div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Perfil Secundário</div>
+        <div class="card-desc">
+          Famílias com crianças, idosos ativos, turistas esportivos, praticantes de yoga e funcional, público cultural interessado em DJ Set ao vivo em ambiente ao ar livre.
+        </div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Acessibilidade e Inclusão</div>
+    <div class="highlight-box">
+      <h4>Compromissos de Inclusão do COSS</h4>
+      <ul>
+        <li><strong>Gratuidade total:</strong> Inscrições gratuitas para 100% dos participantes nas atividades coletivas</li>
+        <li><strong>PcDs:</strong> Percurso acessível a cadeirantes, adaptações na estrutura e sanitários</li>
+        <li><strong>Idosos:</strong> Categoria especial na corrida (60+), aula de yoga adaptada</li>
+        <li><strong>Crianças:</strong> Área kids com atividades monitoradas e circuito infantil</li>
+        <li><strong>Trilha sonora inclusiva:</strong> Volume controlado, sem frequências prejudiciais à audição</li>
+        <li><strong>Kits gratuitos:</strong> Mínimo 20% dos kits destinados a atletas de baixa renda mediante cadastro</li>
+      </ul>
+    </div>
+
+    <div class="section-subtitle">Localização e Alcance</div>
+    <p class="section-text">
+      <strong>Saquarema (pop. ~100.000)</strong> está localizada a 110km do Rio de Janeiro, no Litoral Fluminense. Atrai visitantes de toda a Região Metropolitana, especialmente durante temporadas esportivas. O COSS terá alcance nos 11 municípios da Região dos Lagos, com potencial de atrair mais de 200 atletas de fora do município já na 1ª edição.
+    </p>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte</div>
+    <div class="doc-footer-page">05</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 6: CRONOGRAMA ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 05</div>
+      <div class="doc-ref">Cronograma de Execução</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Cronograma de Execução</div>
+
+    <div class="section-subtitle">Fase Pré-Evento</div>
+    <div class="cronograma">
+      <div class="crono-item">
+        <div class="crono-data">Abr – Mai/2026</div>
+        <div class="crono-desc"><strong>Planejamento e Captação:</strong> Finalização do projeto, submissão ao SALIC, início de negociação com patrocinadores e parceiros. Contratação de fornecedores (som, palco, cronometragem).</div>
+      </div>
+      <div class="crono-item">
+        <div class="crono-data">Mai – Jun/2026</div>
+        <div class="crono-desc"><strong>Produção e Comunicação:</strong> Abertura de inscrições, campanha de divulgação nas redes sociais, assessoria de imprensa, produção de kits e materiais visuais. Reuniões com Prefeitura e Secretarias.</div>
+      </div>
+      <div class="crono-item">
+        <div class="crono-data">Jun – Jul/2026</div>
+        <div class="crono-desc"><strong>Infraestrutura e Logística:</strong> Contratação de staff, treinamento da equipe, montagem do mapa do percurso, aprovação do percurso pela Secretaria de Trânsito, solicitação de alvará. Montagem parcial da infraestrutura.</div>
+      </div>
+      <div class="crono-item">
+        <div class="crono-data">2 dias antes</div>
+        <div class="crono-desc"><strong>Montagem Final:</strong> Instalação de palco, som, iluminação, pórtico inflável, tendas de apoio, sinalização de percurso, sistema de cronometragem.</div>
+      </div>
+      <div class="crono-item">
+        <div class="crono-data">Véspera</div>
+        <div class="crono-desc"><strong>Retirada de Kits:</strong> Entrega antecipada de kits para atletas inscritos na tenda de inscrições. Briefing com staff e voluntários.</div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Programação do Dia do Evento</div>
+    <table>
+      <tr><th>Horário</th><th>Atividade</th><th>Local</th></tr>
+      <tr><td class="td-highlight">16h – 17h</td><td>Retirada de Kits (última chamada)</td><td>Tenda de Inscrições</td></tr>
+      <tr><td class="td-highlight">17h00</td><td>Abertura oficial + DJ Set / Recepção</td><td>Palco Principal</td></tr>
+      <tr><td class="td-highlight">17h30 – 17h45</td><td>Aulão de Alongamento e Aquecimento</td><td>Palco Principal</td></tr>
+      <tr><td class="td-highlight">18h00</td><td>Largada da Corrida de Rua 5km</td><td>Praça do Coração</td></tr>
+      <tr><td class="td-highlight">18h30 – 19h30</td><td>Aula de Funcional / CrossTrainer</td><td>Prainha</td></tr>
+      <tr><td class="td-highlight">18h30 – 19h30</td><td>Aula de Yoga</td><td>Alto do Morro N. Sra. de Nazareth</td></tr>
+      <tr><td class="td-highlight">20h00</td><td>Premiação – Top 3 Geral Masc. e Fem.</td><td>Palco Principal</td></tr>
+      <tr><td class="td-highlight">20h30 – 23h30</td><td>DJ Headline (música eletrônica leve)</td><td>Palco Principal</td></tr>
+      <tr><td class="td-highlight">23h30 – 00h00</td><td>Encerramento oficial</td><td>Palco Principal</td></tr>
+    </table>
+
+    <div class="section-subtitle">Fase Pós-Evento</div>
+    <div class="cronograma">
+      <div class="crono-item">
+        <div class="crono-data">Até 7 dias após</div>
+        <div class="crono-desc"><strong>Desmontagem e Limpeza:</strong> Recolhimento de toda estrutura, limpeza do espaço público, coleta seletiva supervisionada.</div>
+      </div>
+      <div class="crono-item">
+        <div class="crono-data">Até 30 dias após</div>
+        <div class="crono-desc"><strong>Prestação de Contas:</strong> Relatório técnico e financeiro, registro fotográfico e audiovisual, dados de participação, impacto nos meios de comunicação, envio ao SALIC/patrocinadores.</div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte</div>
+    <div class="doc-footer-page">06</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 7: ORÇAMENTO A – R$ 410.000 ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 06-A</div>
+      <div class="doc-ref">Orçamento Analítico – Modelo Padrão</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Orçamento Analítico</div>
+
+    <!-- Badge da versão -->
+    <div style="display:flex;gap:10px;margin-bottom:14px;align-items:center">
+      <div style="background:var(--navy);color:white;font-size:11px;font-weight:800;padding:6px 16px;border-radius:4px;letter-spacing:0.5px">VERSÃO A – MODELO PADRÃO</div>
+      <div style="font-size:11px;color:#666">500 – 700 atletas · Produção Standard · 1ª Edição</div>
+    </div>
+
+    <table style="font-size:10px">
+      <tr>
+        <th style="width:22%">Categoria</th>
+        <th style="width:38%">Descrição dos Itens</th>
+        <th style="width:10%;text-align:center">Qtd</th>
+        <th style="width:15%;text-align:right">Valor Unit. (R$)</th>
+        <th style="width:15%;text-align:right">Total (R$)</th>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="5">Infraestrutura<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 54.800</span></td>
+        <td>Palco coberto 8×6m (montagem inclusa, 2 dias)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">22.000</td><td class="td-value" style="text-align:right">22.000</td>
+      </tr>
+      <tr>
+        <td>Tendas 3×3m (staff, saúde, inscrições, patrocinadores)</td>
+        <td style="text-align:center">8</td><td style="text-align:right">1.800</td><td class="td-value" style="text-align:right">14.400</td>
+      </tr>
+      <tr>
+        <td>Gerador 150KVA (2 dias – evento e montagem)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">7.200</td><td class="td-value" style="text-align:right">7.200</td>
+      </tr>
+      <tr>
+        <td>Grades de isolamento e proteção (300m)</td>
+        <td style="text-align:center">300m</td><td style="text-align:right">30</td><td class="td-value" style="text-align:right">9.000</td>
+      </tr>
+      <tr>
+        <td>Banheiros químicos (10 un., 3 dias + limpeza)</td>
+        <td style="text-align:center">10</td><td style="text-align:right">540</td><td class="td-value" style="text-align:right">5.400</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="2">Som e Iluminação<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 32.000</span></td>
+        <td>PA System profissional completo (line array, subwoofer, monitores)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">18.000</td><td class="td-value" style="text-align:right">18.000</td>
+      </tr>
+      <tr>
+        <td>Iluminação cênica palco + técnico de som (2 dias)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">14.000</td><td class="td-value" style="text-align:right">14.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="3">Atração Musical<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 42.000</span></td>
+        <td>DJ Headliner regional (cache + rider + logística)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">30.000</td><td class="td-value" style="text-align:right">30.000</td>
+      </tr>
+      <tr>
+        <td>DJ abertura e premiação (local)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">5.000</td><td class="td-value" style="text-align:right">5.000</td>
+      </tr>
+      <tr>
+        <td>MC/Apresentador + produção técnica</td>
+        <td style="text-align:center">1</td><td style="text-align:right">7.000</td><td class="td-value" style="text-align:right">7.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="2">Cronometragem<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 22.000</span></td>
+        <td>Sistema chip eletrônico + staffing técnico (700 atletas · R$ 20/atleta)</td>
+        <td style="text-align:center">700</td><td style="text-align:right">20</td><td class="td-value" style="text-align:right">14.000</td>
+      </tr>
+      <tr>
+        <td>Pórtico inflável 8m Navy/Garnet (montagem + desmontagem)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">8.000</td><td class="td-value" style="text-align:right">8.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="5">Kits dos Atletas<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 73.600</span></td>
+        <td>Camiseta dry-fit 100% poliéster (silk branco, 600 un.)</td>
+        <td style="text-align:center">600</td><td style="text-align:right">42</td><td class="td-value" style="text-align:right">25.200</td>
+      </tr>
+      <tr>
+        <td>Número de peito c/ chip cronometragem (600 un.)</td>
+        <td style="text-align:center">600</td><td style="text-align:right">14</td><td class="td-value" style="text-align:right">8.400</td>
+      </tr>
+      <tr>
+        <td>Ecobag algodão cru c/ logo silk (600 un.)</td>
+        <td style="text-align:center">600</td><td style="text-align:right">18</td><td class="td-value" style="text-align:right">10.800</td>
+      </tr>
+      <tr>
+        <td>Squeeze metálico 500ml inox c/ logo (400 un.)</td>
+        <td style="text-align:center">400</td><td style="text-align:right">40</td><td class="td-value" style="text-align:right">16.000</td>
+      </tr>
+      <tr>
+        <td>Medalha finisher personalizada (600 un.)</td>
+        <td style="text-align:center">600</td><td style="text-align:right">22</td><td class="td-value" style="text-align:right">13.200</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="5">Comunicação Visual<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 20.700</span></td>
+        <td>Windflags (banner voador) lona sublimada (8 un.)</td>
+        <td style="text-align:center">8</td><td style="text-align:right">850</td><td class="td-value" style="text-align:right">6.800</td>
+      </tr>
+      <tr>
+        <td>Totens rígidos dupla face (6 un.)</td>
+        <td style="text-align:center">6</td><td style="text-align:right">1.200</td><td class="td-value" style="text-align:right">7.200</td>
+      </tr>
+      <tr>
+        <td>Blimp inflável patrocinador (1 un.)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">4.500</td><td class="td-value" style="text-align:right">4.500</td>
+      </tr>
+      <tr>
+        <td>Backdrop premiação 4×3m lona</td>
+        <td style="text-align:center">1</td><td style="text-align:right">1.200</td><td class="td-value" style="text-align:right">1.200</td>
+      </tr>
+      <tr>
+        <td>Cones, placas, fitas e sinalização percurso</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">1.000</td><td class="td-value" style="text-align:right">1.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="3">Segurança e Saúde<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 28.000</span></td>
+        <td>Segurança privada (20 agentes · 8h · R$ 100/h)</td>
+        <td style="text-align:center">20</td><td style="text-align:right">800</td><td class="td-value" style="text-align:right">16.000</td>
+      </tr>
+      <tr>
+        <td>Ambulância UTI-móvel c/ paramédico (12h)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">6.000</td><td class="td-value" style="text-align:right">6.000</td>
+      </tr>
+      <tr>
+        <td>Médico de plantão + AED + kit emergência</td>
+        <td style="text-align:center">1</td><td style="text-align:right">6.000</td><td class="td-value" style="text-align:right">6.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="3">Marketing<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 22.000</span></td>
+        <td>Produção de identidade visual e conteúdo digital (3 meses)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">8.000</td><td class="td-value" style="text-align:right">8.000</td>
+      </tr>
+      <tr>
+        <td>Assessoria de imprensa (2 meses)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">6.000</td><td class="td-value" style="text-align:right">6.000</td>
+      </tr>
+      <tr>
+        <td>Impulsionamento digital (Insta/FB/Google) + fotógrafo</td>
+        <td style="text-align:center">1</td><td style="text-align:right">8.000</td><td class="td-value" style="text-align:right">8.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="3">Profissionais e Staff<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 18.000</span></td>
+        <td>Educador físico aulão + funcional + yoga (3 prof.)</td>
+        <td style="text-align:center">3</td><td style="text-align:right">1.800</td><td class="td-value" style="text-align:right">5.400</td>
+      </tr>
+      <tr>
+        <td>Coord. técnico percurso + staffing (15 pessoas · R$ 150/dia)</td>
+        <td style="text-align:center">16</td><td style="text-align:right">600</td><td class="td-value" style="text-align:right">9.600</td>
+      </tr>
+      <tr>
+        <td>Uniforme + alimentação equipe</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">3.000</td><td class="td-value" style="text-align:right">3.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="2">Premiação<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 12.000</span></td>
+        <td>Troféus top 3 geral masc. e fem. (6 unid. · R$ 600/un.)</td>
+        <td style="text-align:center">6</td><td style="text-align:right">600</td><td class="td-value" style="text-align:right">3.600</td>
+      </tr>
+      <tr>
+        <td>Brindes patrocinados + prêmios categorias especiais</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">8.400</td><td class="td-value" style="text-align:right">8.400</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Hidratação</td>
+        <td>Água mineral (1.500 un. 500ml) + isotônico (500 un.) + frutas</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">8.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Sustentabilidade</td>
+        <td>Copos eco reutilizáveis (1.000 un.) + equipe coleta seletiva</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">5.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Seguro e Licenças</td>
+        <td>Apólice seguro evento (R$ 6.500) + alvarás municipais (R$ 3.500) + ECAD (R$ 2.000)</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">12.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Administração<br><span style="font-weight:400;font-size:9px;color:#888">e Produção Geral</span></td>
+        <td>Coordenação geral (R$ 20.000) + prestação de contas SALIC (R$ 5.000) + despesas adm. (R$ 5.000)</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">30.000</td>
+      </tr>
+    </table>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px">
+      <div style="background:#f8f8f8;border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:9px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:3px">Subtotal dos Itens</div>
+        <div style="font-size:17px;font-weight:900;color:var(--navy)">R$ 390.600</div>
+      </div>
+      <div style="background:#f8f8f8;border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:9px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:3px">Contingência (5%)</div>
+        <div style="font-size:17px;font-weight:900;color:var(--navy)">R$ 19.530</div>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--navy),var(--marsala));border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:3px">TOTAL VERSÃO A</div>
+        <div style="font-size:20px;font-weight:900;color:white">R$ 410.130</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="card">
+        <div class="card-title">Captação via Lei 11.438/2006</div>
+        <div class="card-value">R$ 280.000</div>
+        <div class="card-desc">~68% do total · Dedução IRPJ patrocinadores PJ Lucro Real</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Patrocínio Direto + Prefeitura</div>
+        <div class="card-value marsala">R$ 130.000</div>
+        <div class="card-desc">~32% · Cotas de patrocínio + apoio institucional municipal</div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Orçamento Versão A – R$ 410.000</div>
+    <div class="doc-footer-page">07</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 7B: ORÇAMENTO B – R$ 800.000 ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 06-B</div>
+      <div class="doc-ref">Orçamento Analítico – Modelo Premium</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div style="display:flex;gap:10px;margin-bottom:14px;align-items:center">
+      <div style="background:var(--marsala);color:white;font-size:11px;font-weight:800;padding:6px 16px;border-radius:4px;letter-spacing:0.5px">VERSÃO B – MODELO PREMIUM</div>
+      <div style="font-size:11px;color:#666">1.000+ atletas · Produção Premium · Naming Rights disponível</div>
+    </div>
+
+    <table style="font-size:10px">
+      <tr>
+        <th style="width:22%">Categoria</th>
+        <th style="width:38%">Descrição dos Itens</th>
+        <th style="width:10%;text-align:center">Qtd</th>
+        <th style="width:15%;text-align:right">Valor Unit. (R$)</th>
+        <th style="width:15%;text-align:right">Total (R$)</th>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="5">Infraestrutura Premium<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 115.000</span></td>
+        <td>Palco coberto 12×10m estrutura box truss (montagem 3 dias)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">45.000</td><td class="td-value" style="text-align:right">45.000</td>
+      </tr>
+      <tr>
+        <td>Tendas 3×3m (saúde, VIP, patrocinadores, staff, registro)</td>
+        <td style="text-align:center">16</td><td style="text-align:right">1.800</td><td class="td-value" style="text-align:right">28.800</td>
+      </tr>
+      <tr>
+        <td>Gerador 300KVA redundante (3 dias)</td>
+        <td style="text-align:center">2</td><td style="text-align:right">7.500</td><td class="td-value" style="text-align:right">15.000</td>
+      </tr>
+      <tr>
+        <td>Grades de isolamento e proteção (600m)</td>
+        <td style="text-align:center">600m</td><td style="text-align:right">30</td><td class="td-value" style="text-align:right">18.000</td>
+      </tr>
+      <tr>
+        <td>Banheiros químicos premium (20 un., 4 dias + limpeza)</td>
+        <td style="text-align:center">20</td><td style="text-align:right">410</td><td class="td-value" style="text-align:right">8.200</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="2">Som e Iluminação Show<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 75.000</span></td>
+        <td>PA System premium line array L-Acoustics/JBL + subwoofers (2 lados)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">45.000</td><td class="td-value" style="text-align:right">45.000</td>
+      </tr>
+      <tr>
+        <td>Iluminação show (moving heads, beam, laser, LED wall) + crew técnico 3 dias</td>
+        <td style="text-align:center">1</td><td style="text-align:right">30.000</td><td class="td-value" style="text-align:right">30.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="4">Atrações Musicais<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 120.000</span></td>
+        <td>DJ Headliner nacional A+ (cache + rider técnico + hospedagem + segurança)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">80.000</td><td class="td-value" style="text-align:right">80.000</td>
+      </tr>
+      <tr>
+        <td>DJ regional B (abertura + premiação)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">12.000</td><td class="td-value" style="text-align:right">12.000</td>
+      </tr>
+      <tr>
+        <td>MC/Apresentador profissional</td>
+        <td style="text-align:center">1</td><td style="text-align:right">10.000</td><td class="td-value" style="text-align:right">10.000</td>
+      </tr>
+      <tr>
+        <td>Produção técnica backstage (riders, hospitality)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">18.000</td><td class="td-value" style="text-align:right">18.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="2">Cronometragem<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 38.000</span></td>
+        <td>Chip eletrônico + staffing técnico + backup (1.200 atletas · R$ 20/at.)</td>
+        <td style="text-align:center">1.200</td><td style="text-align:right">20</td><td class="td-value" style="text-align:right">24.000</td>
+      </tr>
+      <tr>
+        <td>Pórtico inflável premium 10m + pórtico backup (2 unid.)</td>
+        <td style="text-align:center">2</td><td style="text-align:right">7.000</td><td class="td-value" style="text-align:right">14.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="5">Kits dos Atletas (1.000 un.)<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 135.000</span></td>
+        <td>Camiseta dry-fit premium c/ sublimação total (1.000 un.)</td>
+        <td style="text-align:center">1.000</td><td style="text-align:right">48</td><td class="td-value" style="text-align:right">48.000</td>
+      </tr>
+      <tr>
+        <td>Número de peito c/ chip RFID (1.000 un.)</td>
+        <td style="text-align:center">1.000</td><td style="text-align:right">16</td><td class="td-value" style="text-align:right">16.000</td>
+      </tr>
+      <tr>
+        <td>Ecobag algodão cru logo silk (1.000 un.)</td>
+        <td style="text-align:center">1.000</td><td style="text-align:right">18</td><td class="td-value" style="text-align:right">18.000</td>
+      </tr>
+      <tr>
+        <td>Squeeze metálico 500ml premium (1.000 un.)</td>
+        <td style="text-align:center">1.000</td><td style="text-align:right">40</td><td class="td-value" style="text-align:right">40.000</td>
+      </tr>
+      <tr>
+        <td>Medalha finisher premium c/ fita (1.000 un.)</td>
+        <td style="text-align:center">1.000</td><td style="text-align:right">13</td><td class="td-value" style="text-align:right">13.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="5">Comunicação Visual<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 60.000</span></td>
+        <td>Windflags premium lona sublimada (20 un.)</td>
+        <td style="text-align:center">20</td><td style="text-align:right">850</td><td class="td-value" style="text-align:right">17.000</td>
+      </tr>
+      <tr>
+        <td>Totens rígidos premium dupla face (12 un.)</td>
+        <td style="text-align:center">12</td><td style="text-align:right">1.200</td><td class="td-value" style="text-align:right">14.400</td>
+      </tr>
+      <tr>
+        <td>Blimp inflável patrocinador grande (2 un.)</td>
+        <td style="text-align:center">2</td><td style="text-align:right">7.500</td><td class="td-value" style="text-align:right">15.000</td>
+      </tr>
+      <tr>
+        <td>Backdrop premiação premium 6×4m + roll-ups (25 un.)</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">8.600</td><td class="td-value" style="text-align:right">8.600</td>
+      </tr>
+      <tr>
+        <td>Sinalização percurso completa + LED painéis</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">5.000</td><td class="td-value" style="text-align:right">5.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="3">Segurança e Saúde<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 48.000</span></td>
+        <td>Segurança privada (35 agentes · 8h · R$ 100/h)</td>
+        <td style="text-align:center">35</td><td style="text-align:right">800</td><td class="td-value" style="text-align:right">28.000</td>
+      </tr>
+      <tr>
+        <td>Ambulância UTI-móvel avançada (12h) + suporte aéreo stand-by</td>
+        <td style="text-align:center">1</td><td style="text-align:right">10.000</td><td class="td-value" style="text-align:right">10.000</td>
+      </tr>
+      <tr>
+        <td>Médico + enfermeiro + posto médico estruturado</td>
+        <td style="text-align:center">1</td><td style="text-align:right">10.000</td><td class="td-value" style="text-align:right">10.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="3">Marketing Premium<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 45.000</span></td>
+        <td>Produção de conteúdo, branding e campanha (equipe dedicada 3 meses)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">20.000</td><td class="td-value" style="text-align:right">20.000</td>
+      </tr>
+      <tr>
+        <td>Assessoria de imprensa regional (2 meses)</td>
+        <td style="text-align:center">1</td><td style="text-align:right">12.000</td><td class="td-value" style="text-align:right">12.000</td>
+      </tr>
+      <tr>
+        <td>Impulsionamento digital + filmmaker + drone aéreo</td>
+        <td style="text-align:center">1</td><td style="text-align:right">13.000</td><td class="td-value" style="text-align:right">13.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="3">Profissionais e Staff<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 35.000</span></td>
+        <td>Educadores físicos: aulão, funcional, yoga (5 prof.)</td>
+        <td style="text-align:center">5</td><td style="text-align:right">1.800</td><td class="td-value" style="text-align:right">9.000</td>
+      </tr>
+      <tr>
+        <td>Coord. técnico + staffing evento (30 pessoas · R$ 500/dia)</td>
+        <td style="text-align:center">30</td><td style="text-align:right">500</td><td class="td-value" style="text-align:right">15.000</td>
+      </tr>
+      <tr>
+        <td>Uniforme, alimentação e logística da equipe</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">11.000</td><td class="td-value" style="text-align:right">11.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight" rowspan="2">Premiação<br><span style="font-weight:400;font-size:9px;color:#888">Subtotal: 25.000</span></td>
+        <td>Troféus premium por categoria (10 cat. × 3 posições · R$ 600)</td>
+        <td style="text-align:center">30</td><td style="text-align:right">600</td><td class="td-value" style="text-align:right">18.000</td>
+      </tr>
+      <tr>
+        <td>Prêmios em voucher/espécie + brindes premium patrocinados</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">7.000</td><td class="td-value" style="text-align:right">7.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Hidratação</td>
+        <td>Água (3.000 un.) + isotônico (1.000 un.) + frutas + gel energético</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">18.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Sustentabilidade</td>
+        <td>Copos eco (2.000 un.) + coleta seletiva + certificado compensação carbono</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">10.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Seguro e Licenças</td>
+        <td>Apólice evento premium (R$ 14.000) + alvarás (R$ 4.000) + ECAD/ABRAMUS (R$ 4.000)</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">22.000</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Administração<br><span style="font-weight:400;font-size:9px;color:#888">e Produção Geral</span></td>
+        <td>Coord. geral 3 meses (R$ 35.000) + contabilidade SALIC (R$ 8.000) + despesas adm. (R$ 12.000)</td>
+        <td style="text-align:center">1 lote</td><td style="text-align:right">—</td><td class="td-value" style="text-align:right">55.000</td>
+      </tr>
+    </table>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px">
+      <div style="background:#f8f8f8;border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:9px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:3px">Subtotal dos Itens</div>
+        <div style="font-size:17px;font-weight:900;color:var(--navy)">R$ 761.400</div>
+      </div>
+      <div style="background:#f8f8f8;border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:9px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:3px">Contingência (5%)</div>
+        <div style="font-size:17px;font-weight:900;color:var(--navy)">R$ 38.070</div>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--marsala),var(--navy));border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:3px">TOTAL VERSÃO B</div>
+        <div style="font-size:20px;font-weight:900;color:white">R$ 799.470</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+      <div class="card">
+        <div class="card-title">Captação via Lei 11.438/2006</div>
+        <div class="card-value">R$ 500.000</div>
+        <div class="card-desc">~63% · Máximo permitido via incentivo fiscal</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Naming Rights / Patrocínio Master</div>
+        <div class="card-value marsala">R$ 200.000</div>
+        <div class="card-desc">~25% · Cota exclusiva naming rights do evento</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Demais Cotas + Prefeitura</div>
+        <div class="card-value">R$ 99.470</div>
+        <div class="card-desc">~12% · Cotas ouro/prata + apoio institucional</div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Orçamento Versão B – R$ 800.000</div>
+    <div class="doc-footer-page">08</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 8: CONTRAPARTIDAS E PATROCÍNIO ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 07</div>
+      <div class="doc-ref">Contrapartidas e Patrocínio</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Contrapartidas e Cotas de Patrocínio</div>
+
+    <div class="section-subtitle">Benefícios aos Patrocinadores</div>
+    <table>
+      <tr><th>Cota</th><th>Investimento</th><th>Benefícios</th></tr>
+      <tr>
+        <td class="td-highlight">Naming Rights<br>(Patrocinador Master)</td>
+        <td class="td-value">R$ 50.000+</td>
+        <td>Nome no título do evento · Logo no pórtico (todas as faces) · Blimp exclusivo · Logo em toda comunicação (banners, camiseta frente) · Tenda VIP exclusiva · 50 kits premium · Ação de marca no palco</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Diamante</td>
+        <td class="td-value">R$ 30.000</td>
+        <td>Logo em destaque no pórtico · Logo na camiseta (costas) · 2 windflags exclusivos · 30 kits · Tenda patrocinador · Menção em todas as peças de comunicação</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Ouro</td>
+        <td class="td-value">R$ 15.000</td>
+        <td>Logo no backdrop de premiação · 1 windflag · 15 kits · Presença em redes sociais (3 posts) · Distribuição de brindes no evento</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Prata</td>
+        <td class="td-value">R$ 7.000</td>
+        <td>Logo nos materiais impressos · 10 kits · 2 posts em redes sociais · Distribuição de samples no evento</td>
+      </tr>
+      <tr>
+        <td class="td-highlight">Apoio / Produto</td>
+        <td>Permuta</td>
+        <td>Logo em local específico · Menção nas redes · Distribuição de produto no evento</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">Parceiros Institucionais Potenciais</div>
+    <table>
+      <tr><th>Parceiro</th><th>Papel</th><th>Contrapartida COSS</th></tr>
+      <tr><td class="td-highlight">Prefeitura de Saquarema</td><td>Apoio institucional, segurança pública, limpeza</td><td>Logo institucional em toda comunicação</td></tr>
+      <tr><td class="td-highlight">Secretaria de Esportes</td><td>Estrutura esportiva e apoio técnico</td><td>Promoção de programas municipais no evento</td></tr>
+      <tr><td class="td-highlight">Secretaria de Saúde</td><td>Tendas de saúde preventiva e ambulância</td><td>Visibilidade de campanhas de saúde</td></tr>
+      <tr><td class="td-highlight">Marcas Privadas<br>(Mitra, RedBull, UseOlive)</td><td>Patrocínio financeiro e produto</td><td>Ativação de marca, sampling, visibilidade</td></tr>
+      <tr><td class="td-highlight">Comércio Local</td><td>Food trucks, ambulantes, lojas esportivas</td><td>Espaço no evento, divulgação nas redes</td></tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Por Que Patrocinar o COSS?</h4>
+      <ul>
+        <li><strong>Audiência altamente engajada:</strong> atletas, famílias, jovens e turistas esportivos</li>
+        <li><strong>Ambiente premium ao ar livre:</strong> Saquarema, cidade do esporte e do surf</li>
+        <li><strong>Ampla cobertura midiática:</strong> redes sociais, imprensa local e regional</li>
+        <li><strong>Associação de marca a saúde, natureza e bem-estar:</strong> valores de alto apelo</li>
+        <li><strong>Benefício fiscal:</strong> dedução de até 1% do IRPJ via Lei 11.438/2006</li>
+        <li><strong>Evento com potencial de se tornar anual e crescente</strong> no calendário oficial do município</li>
+      </ul>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte</div>
+    <div class="doc-footer-page">09</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 9: EMBASAMENTO LEGAL ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 08</div>
+      <div class="doc-ref">Embasamento Legal</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Embasamento Legal e Regulatório</div>
+
+    <div class="section-subtitle">Legislação Federal Aplicável</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+      <span class="legal-badge">Lei 11.438/2006 – Lei de Incentivo ao Esporte</span>
+      <span class="legal-badge marsala-badge">Lei 9.615/1998 – Lei Pelé</span>
+      <span class="legal-badge">Lei 10.264/2001 – Lei Agnelo/Piva</span>
+      <span class="legal-badge marsala-badge">Decreto 6.180/2007 – Regulamenta Lei 11.438</span>
+      <span class="legal-badge">Lei 13.146/2015 – Lei Brasileira de Inclusão</span>
+    </div>
+
+    <div class="section-subtitle">Lei 11.438/2006 – Lei de Incentivo ao Esporte</div>
+    <p class="section-text">
+      O COSS se enquadra na <strong>Lei de Incentivo ao Esporte (Lei 11.438/2006)</strong>, que permite que empresas tributadas pelo Lucro Real deduzam do Imposto de Renda Pessoa Jurídica (IRPJ) até <strong>1% do imposto devido</strong>, ao patrocinar projetos esportivos previamente aprovados pelo Ministério do Esporte (via SALIC Esporte).
+    </p>
+    <p class="section-text">
+      O projeto se enquadra na modalidade <strong>"Manifestação Desportiva de Criação Nacional"</strong> (Art. 1°, §1°, inciso I), pois trata-se de evento esportivo popular de corrida de rua, com livre acesso à comunidade, sem fins lucrativos individuais, com caráter social e educativo comprovado.
+    </p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-title">Benefício Fiscal ao Patrocinador</div>
+        <div class="card-desc">
+          <strong>PJ Lucro Real:</strong> Dedução de até 1% do IRPJ + 1% da CSLL devidos.<br>
+          Patrocínio de R$ 50.000 pode ter custo líquido de apenas R$ 25.000–30.000 após dedução fiscal.
+        </div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Obrigações do Projeto (SALIC)</div>
+        <div class="card-desc">
+          • Aprovação prévia pelo Ministério do Esporte<br>
+          • Mínimo 20% de gratuidades distribuídas<br>
+          • Prestação de contas técnica e financeira<br>
+          • Vedação ao lucro do proponente com recursos incentivados
+        </div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Legislação Estadual e Municipal (RJ)</div>
+    <p class="section-text">
+      Adicionalmente, o projeto pode ser submetido ao <strong>Lei Estadual do Rio de Janeiro nº 3.188/1999 (Lei de Incentivo ao Esporte do RJ)</strong>, que prevê dedução de ICMS para empresas contribuintes no estado, ampliando a base de potenciais patrocinadores locais e regionais.
+    </p>
+    <p class="section-text">
+      No âmbito municipal, será solicitado o <strong>reconhecimento de interesse público</strong> pela Câmara Municipal de Saquarema e o apoio formal da Prefeitura, o que permite a isenção de taxas de licenças e uso do espaço público, reduzindo o custo operacional do evento.
+    </p>
+
+    <div class="highlight-box marsala-box">
+      <h4>Diferenciais para Aprovação no SALIC</h4>
+      <ul>
+        <li><strong>Acesso gratuito</strong> a 100% das atividades esportivas e culturais</li>
+        <li><strong>Componente social forte:</strong> inclusão de PcDs, idosos, crianças e baixa renda</li>
+        <li><strong>Sustentabilidade ambiental:</strong> lixo zero, copos reutilizáveis, coleta seletiva</li>
+        <li><strong>Impacto comprovável</strong> com indicadores claros e prestação de contas transparente</li>
+        <li><strong>Apoio institucional da Prefeitura</strong> e parceiros governamentais</li>
+        <li><strong>Multiplicação regional:</strong> alcance de 11 municípios da Região dos Lagos</li>
+        <li><strong>Potencial de continuidade anual,</strong> aumentando o retorno social e fiscal</li>
+      </ul>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte</div>
+    <div class="doc-footer-page">10</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 10: DECLARAÇÃO E ASSINATURA ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
+        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">Seção 09</div>
+      <div class="doc-ref">Declaração e Assinatura</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Considerações Finais e Declaração</div>
+
+    <div class="section-subtitle">Considerações Finais</div>
+    <p class="section-text">
+      O <strong>Circuito Onda Sonora Saquarema (COSS)</strong> propõe um formato moderno de evento público sustentável e integrador, que celebra o corpo, a mente e a cidade. Mais do que uma corrida, é uma <strong>experiência coletiva de energia positiva, saúde e pertencimento</strong>, fortalecendo o nome de Saquarema como referência em esporte, turismo e cultura urbana.
+    </p>
+    <p class="section-text">
+      Com o apoio da <strong>Lei de Incentivo ao Esporte (Lei 11.438/2006)</strong>, da Prefeitura Municipal de Saquarema e de parceiros privados comprometidos com o desenvolvimento social, o COSS pode tornar-se um <strong>evento anual no calendário oficial do município</strong>, gerando benefícios sociais, culturais, econômicos e ambientais duradouros para toda a Região dos Lagos.
+    </p>
+
+    <div class="highlight-box" style="margin-bottom:20px">
+      <h4>Resumo Executivo do Projeto</h4>
+      <p>
+        <strong>Evento:</strong> Circuito Onda Sonora Saquarema – COSS 2026 &nbsp;|&nbsp;
+        <strong>Data:</strong> 18 de Julho de 2026 (Sábado) &nbsp;|&nbsp;
+        <strong>Local:</strong> Praça do Coração, Saquarema – RJ<br>
+        <strong>Duração:</strong> 7 horas (17h–00h) &nbsp;|&nbsp;
+        <strong>Público:</strong> 500–1.000 participantes &nbsp;|&nbsp;
+        <strong>Acesso:</strong> Gratuito<br>
+        <strong>Orçamento:</strong> R$ 175.000 &nbsp;|&nbsp;
+        <strong>Captação via Lei:</strong> R$ 120.000 &nbsp;|&nbsp;
+        <strong>Enquadramento:</strong> Lei 11.438/2006
+      </p>
+    </div>
+
+    <div class="section-subtitle">Declaração de Responsabilidade</div>
+    <p class="section-text">
+      Os abaixo assinados, organizadores do <strong>Circuito Onda Sonora Saquarema – COSS 2026</strong>, declaram, para todos os fins de direito, que:
+    </p>
+    <div style="background:#f8f8f8;border-radius:8px;padding:16px;margin-bottom:20px">
+      <div class="list-item">As informações constantes neste projeto são verdadeiras e completas.</div>
+      <div class="list-item">O projeto não possui fins lucrativos individuais com os recursos incentivados.</div>
+      <div class="list-item">Será garantido o mínimo de 20% de gratuidades na distribuição de kits e benefícios.</div>
+      <div class="list-item">A prestação de contas técnica e financeira será entregue no prazo legal.</div>
+      <div class="list-item">Os recursos captados serão aplicados exclusivamente nas atividades descritas neste projeto.</div>
+      <div class="list-item">O evento respeitará toda a legislação vigente, incluindo normas de segurança, meio ambiente e acessibilidade.</div>
+    </div>
+
+    <div style="font-size:11px;color:#888;margin-bottom:20px">Saquarema – RJ, _____ de _______________ de 2026.</div>
+
+    <div class="signature-block">
+      <div class="sig-field">
+        <div class="sig-line">
+          <div class="sig-name">Fernanda Koenigsdorf</div>
+          <div class="sig-role">Organizadora e Responsável Legal – COSS 2026<br>CPF: ___.___.___-__</div>
+        </div>
+      </div>
+      <div class="sig-field">
+        <div class="sig-line">
+          <div class="sig-name">Paula Bravo</div>
+          <div class="sig-role">Co-Organizadora – COSS 2026<br>CPF: ___.___.___-__</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;padding:14px 16px;background:var(--navy);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px">Contato das Organizadoras</div>
+        <div style="font-size:11.5px;color:white;margin-top:5px;line-height:1.8">
+          Fernanda Koenigsdorf: [email/telefone]<br>
+          Paula Bravo: [email/telefone]<br>
+          contato@ondasonora.com.br · ondasonora.com.br
+        </div>
+      </div>
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+        <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+        <text x="30" y="11" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="5" font-family="Arial" font-weight="700" letter-spacing="1">ONDA SONORA</text>
+        <polyline points="4,30 11,30 13.5,22.5 16,37.5 18.5,26 21,34 23.5,28.5 26,32 28.5,27 31,33.5 33.5,21.5 36,36 38.5,30 45,30" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 4 40 Q 11 36 18 40 Q 25 44 32 40 Q 39 36 46 40 Q 49.5 42 52 40" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Projeto Lei de Incentivo ao Esporte – Lei 11.438/2006</div>
+    <div class="doc-footer-page">11</div>
+  </div>
+</div>
+
+</body>
+</html>
