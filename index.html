@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manual da Marca COSS – Circuito Onda Sonora Saquarema</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy: #1B2A4A;
+  --marsala: #8B2252;
+  --white: #FFFFFF;
+  --light: #F5F5F5;
+}
+body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
+.page {
+  width: 297mm;
+  min-height: 210mm;
+  background: white;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+@media print {
+  body { background: white; }
+  .page { margin: 0; width: 100%; min-height: 210mm; page-break-after: always; }
+  .no-print { display: none; }
+}
+
+/* ===== SIDEBAR LAYOUT ===== */
+.page-inner {
+  display: flex;
+  min-height: 210mm;
+}
+.sidebar {
+  flex: 0 0 158px;
+  background: var(--navy);
+  padding: 26px 0;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-title {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 0 16px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 10px;
+}
+.s-item {
+  padding: 5px 16px;
+  font-size: 8.5px;
+  color: rgba(255,255,255,0.42);
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.35;
+  cursor: default;
+}
+.s-item.active {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border-left: 3px solid var(--marsala);
+  padding-left: 13px;
+  font-weight: 700;
+}
+.s-num {
+  font-size: 7.5px;
+  color: var(--marsala);
+  min-width: 16px;
+  font-weight: 800;
+  margin-top: 0.5px;
+}
+.s-item.active .s-num { color: var(--marsala); }
+.page-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  background: var(--navy);
+  padding: 26px 36px;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  position: relative;
+  flex-shrink: 0;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0;
+  width: 90px; height: 100%;
+  background: var(--marsala);
+}
+.section-header .sec-label {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.section-header h2 {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.sec-hd-text { flex: 1; }
+.page-number {
+  position: absolute;
+  bottom: 14px;
+  right: 22px;
+  font-size: 10px;
+  color: rgba(0,0,0,0.18);
+  font-weight: 700;
+}
+.page-number.light { color: rgba(255,255,255,0.3); }
+
+/* ===== CAPA ===== */
+.cover {
+  min-height: 210mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53.jpeg');
+  background-size: cover;
+  background-position: center 30%;
+}
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(27,42,74,0.93) 50%, rgba(27,42,74,0.55) 100%);
+}
+.cover-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  min-height: 210mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cover-logo { margin-bottom: 36px; }
+.cover h1 {
+  color: white;
+  font-size: 58px;
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.cover h2 {
+  color: rgba(255,255,255,0.65);
+  font-size: 17px;
+  font-weight: 300;
+  margin-top: 16px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.cover-sub {
+  color: rgba(255,255,255,0.35);
+  font-size: 11px;
+  margin-top: 44px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.cover-marsala-bar {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 7px;
+  background: var(--marsala);
+  z-index: 3;
+}
+
+/* ===== ÍNDICE ===== */
+.index-page {
+  background: white;
+  padding: 60px 80px;
+  min-height: 210mm;
+}
+.index-page h1 {
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  position: relative;
+}
+.index-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: -12px; left: 0;
+  width: 56px; height: 4px;
+  background: var(--marsala);
+}
+.index-item {
+  display: flex;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.index-num { font-size: 12px; color: var(--marsala); font-weight: 800; width: 36px; }
+.index-title { flex: 1; font-size: 13.5px; font-weight: 600; color: var(--navy); }
+.index-dots { flex: 1; border-bottom: 2px dotted #e0e0e0; margin: 0 12px; }
+.index-page-num { font-size: 12px; color: #bbb; font-weight: 700; }
+
+/* ===== MENSAGEM ===== */
+.message-page { display: flex; min-height: 210mm; }
+.message-left {
+  flex: 0 0 55%;
+  background: var(--navy);
+  padding: 56px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.msg-label {
+  font-size: 11px; color: rgba(255,255,255,0.38);
+  font-weight: 300; margin-bottom: 6px;
+  text-transform: uppercase; letter-spacing: 2px;
+}
+.message-left h2 {
+  font-size: 36px; font-weight: 900; color: white;
+  text-transform: uppercase; margin-bottom: 26px; line-height: 1;
+}
+.message-left p { font-size: 12.5px; color: rgba(255,255,255,0.72); line-height: 1.85; margin-bottom: 13px; }
+.msg-signature { margin-top: 26px; font-weight: 800; color: white; font-size: 13px; }
+.msg-signature span { display: block; font-weight: 300; font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+.message-right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.message-right img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.message-right-overlay {
+  position: absolute; inset: 0;
+  background: rgba(27,42,74,0.25);
+}
+.message-right-logo {
+  position: absolute; bottom: 30px; right: 30px;
+}
+
+/* ===== CONCEITO ===== */
+.concept-body { padding: 32px 36px; display: flex; gap: 36px; align-items: flex-start; }
+.concept-text { flex: 0 0 44%; }
+.concept-text h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+.concept-text p { font-size: 12.5px; color: #444; line-height: 1.85; margin-bottom: 13px; }
+.concept-visual { flex: 1; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+.c-row { display: flex; gap: 18px; justify-content: center; }
+.c-circle {
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; text-align: center; color: white;
+}
+.c-label { font-size: 13px; font-weight: 800; text-transform: uppercase; line-height: 1.3; }
+.c-sub { font-size: 9px; opacity: 0.6; margin-top: 3px; line-height: 1.4; }
+
+/* ===== LOGO ===== */
+.logo-body { padding: 28px 36px; }
+.logo-desc { font-size: 12.5px; color: #555; max-width: 480px; margin-bottom: 22px; line-height: 1.65; }
+.logo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.logo-box {
+  border: 1px solid #e8e8e8; border-radius: 8px;
+  padding: 26px 14px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 11px; min-height: 145px;
+}
+.logo-box.dark { background: var(--navy); border-color: var(--navy); }
+.logo-box.marsala { background: var(--marsala); border-color: var(--marsala); }
+.logo-box p { font-size: 10px; color: #888; text-align: center; }
+.logo-box.dark p, .logo-box.marsala p { color: rgba(255,255,255,0.5); }
+.logo-rules {
+  margin-top: 18px; padding: 14px 16px; background: #f7f7f7;
+  border-radius: 8px; display: flex; gap: 28px; align-items: flex-start;
+}
+
+/* ===== PALETA ===== */
+.palette-body { padding: 28px 36px; }
+.palette-desc { font-size: 12.5px; color: #555; max-width: 480px; margin-bottom: 4px; line-height: 1.6; }
+.palette-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 20px; }
+.color-card { border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.color-swatch { height: 110px; }
+.color-info { padding: 11px 12px; background: white; }
+.color-name { font-size: 12px; font-weight: 800; color: #333; }
+.color-hex { font-size: 11px; color: #888; margin-top: 2px; }
+.color-cmyk { font-size: 10px; color: #bbb; }
+.palette-bar {
+  margin-top: 22px; height: 40px; border-radius: 8px;
+  overflow: hidden; display: flex;
+}
+.pbar-seg { display: flex; align-items: center; justify-content: center; color: white; font-size: 11px; font-weight: 700; }
+
+/* ===== TIPOGRAFIA ===== */
+.typo-body { padding: 28px 36px; }
+.typo-desc { font-size: 12.5px; color: #555; max-width: 480px; margin-bottom: 22px; line-height: 1.6; }
+.typo-row {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 13px 0; border-bottom: 1px solid #f0f0f0;
+}
+.typo-lbl { font-size: 10px; color: #bbb; width: 90px; flex-shrink: 0; }
+.typo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+.typo-card { padding: 18px; background: #f8f8f8; border-radius: 8px; }
+.typo-card-lbl {
+  font-size: 10px; font-weight: 700; color: #bbb;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 9px;
+}
+
+/* ===== USOS ===== */
+.usage-body { padding: 28px 36px; }
+.usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.usage-box { border-radius: 8px; padding: 22px; }
+.usage-box.correct { background: #f0f7f0; border: 1px solid #b8dab8; }
+.usage-box.wrong { background: #fff0f0; border: 1px solid #eebaba; }
+.usage-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 13px; }
+.correct .usage-tag { color: #286028; }
+.wrong .usage-tag { color: #9e0020; }
+.usage-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: 6px; margin-bottom: 8px;
+}
+.usage-rules {
+  margin-top: 16px; padding: 14px 16px;
+  background: #f4f4f4; border-left: 4px solid var(--marsala); border-radius: 4px;
+}
+.usage-rules-title { font-size: 11px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.usage-rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 11px; color: #555; }
+
+/* ===== UNIFORMES ===== */
+.uniform-body { padding: 28px 36px; }
+.uniform-intro { font-size: 12.5px; color: #555; margin-bottom: 18px; line-height: 1.6; }
+.uniform-photos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+.uniform-photo-card { display: flex; flex-direction: column; gap: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+.uniform-photo-card img {
+  width: 100%; height: 200px;
+  object-fit: cover; object-position: top;
+}
+.uniform-photo-label {
+  background: var(--navy);
+  padding: 8px 12px;
+  font-size: 11px; font-weight: 800; color: white;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.uniform-photo-desc {
+  background: #f8f8f8;
+  padding: 8px 12px;
+  font-size: 10px; color: #666; line-height: 1.5;
+}
+.uniform-specs {
+  margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+.spec-box { background: #f8f8f8; border-radius: 8px; padding: 13px 16px; }
+.spec-title {
+  font-size: 10px; font-weight: 700; color: #999;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px;
+}
+.spec-list { font-size: 11px; color: #555; line-height: 2; }
+
+/* ===== KIT ATLETA ===== */
+.kit-body { padding: 28px 36px; }
+.kit-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
+.kit-photo img {
+  width: 100%; border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+.kit-items-list { display: flex; flex-direction: column; gap: 13px; }
+.kit-item-row {
+  display: flex; align-items: center; gap: 13px;
+  padding: 13px 14px; background: var(--navy); border-radius: 8px; color: white;
+}
+.kit-item-num { font-size: 22px; font-weight: 900; color: var(--marsala); min-width: 32px; }
+.kit-item-info h4 { font-size: 13px; font-weight: 800; }
+.kit-item-info p { font-size: 10.5px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.kit-item-row.marsala-row { background: var(--marsala); }
+.kit-cta {
+  margin-top: 13px; padding: 14px 16px;
+  background: #f8f8f8; border-radius: 8px; border-left: 4px solid var(--marsala);
+}
+.kit-cta p { font-size: 11.5px; color: #444; line-height: 1.7; }
+
+/* ===== BANNERS ===== */
+.banners-body { padding: 28px 36px; }
+.banners-intro { font-size: 12.5px; color: #555; margin-bottom: 18px; line-height: 1.6; }
+.banners-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.banner-photo { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+.banner-photo img { width: 100%; height: 220px; object-fit: cover; }
+.banner-photo-label {
+  background: var(--navy); padding: 9px 14px;
+  font-size: 11px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.banner-photo-desc {
+  background: #f8f8f8; padding: 9px 14px;
+  font-size: 10.5px; color: #666; line-height: 1.55;
+}
+
+/* ===== PÓRTICO ===== */
+.portico-body { padding: 0; }
+.portico-hero {
+  height: 270px; position: relative; overflow: hidden;
+}
+.portico-hero img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+}
+.portico-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(27,42,74,0.05), rgba(27,42,74,0.65));
+}
+.portico-hero-text {
+  position: absolute; bottom: 24px; left: 36px; color: white;
+}
+.portico-hero-text h3 { font-size: 26px; font-weight: 900; text-transform: uppercase; }
+.portico-hero-text p { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+.portico-info { padding: 22px 36px; }
+.portico-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.portico-spec {
+  background: var(--navy); border-radius: 8px;
+  padding: 16px; text-align: center; color: white;
+}
+.portico-spec.marsala-bg { background: var(--marsala); }
+.portico-spec-val { font-size: 20px; font-weight: 900; }
+.portico-spec-lbl { font-size: 10px; color: rgba(255,255,255,0.55); margin-top: 4px; text-transform: uppercase; }
+.portico-desc {
+  margin-top: 14px; padding: 14px 16px;
+  background: #f8f8f8; border-radius: 8px; font-size: 11.5px; color: #555; line-height: 1.75;
+}
+
+/* ===== PREMIAÇÃO ===== */
+.premiacao-body { padding: 0; }
+.premiacao-hero { height: 260px; overflow: hidden; position: relative; }
+.premiacao-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.premiacao-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(27,42,74,0.45), rgba(139,34,82,0.3));
+}
+.premiacao-info { padding: 22px 36px; }
+.premiacao-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+.premio-card {
+  background: linear-gradient(135deg, var(--navy), var(--marsala));
+  border-radius: 8px; padding: 18px 14px;
+  text-align: center; color: white;
+}
+.premio-pos { font-size: 26px; font-weight: 900; }
+.premio-label { font-size: 10px; color: rgba(255,255,255,0.65); margin-top: 3px; text-transform: uppercase; letter-spacing: 1px; }
+.premio-prize { font-size: 11.5px; font-weight: 700; margin-top: 8px; color: rgba(255,255,255,0.9); }
+.premiacao-schedule {
+  padding: 14px 16px; background: #f8f8f8; border-radius: 8px;
+  font-size: 11.5px; color: #555; line-height: 1.75;
+}
+
+/* ===== PERCURSO ===== */
+.route-body { padding: 28px 36px; }
+.route-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: start; }
+.route-photo img {
+  width: 100%; height: 220px; object-fit: cover; border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.route-info-col { display: flex; flex-direction: column; gap: 12px; }
+.route-stat {
+  background: var(--navy); border-radius: 8px;
+  padding: 14px 18px; color: white;
+  display: flex; align-items: center; gap: 14px;
+}
+.route-stat.marsala-bg { background: var(--marsala); }
+.route-stat-val { font-size: 28px; font-weight: 900; }
+.route-stat-lbl { font-size: 10.5px; color: rgba(255,255,255,0.55); text-transform: uppercase; }
+.route-points {
+  margin-top: 14px; padding: 13px 16px;
+  background: #f8f8f8; border-radius: 8px;
+  font-size: 11.5px; color: #555; line-height: 2;
+}
+
+/* ===== PAPELARIA ===== */
+.paper-body { padding: 28px 36px; }
+.paper-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.paper-card { background: #f5f5f5; border-radius: 8px; padding: 16px; }
+.paper-card-title { font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 11px; }
+.letterhead { background: white; border-radius: 4px; padding: 11px; }
+.lh-header { background: var(--navy); padding: 7px 11px; border-radius: 3px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: center; }
+.lh-logo { font-size: 8px; font-weight: 900; color: white; }
+.lh-tagline { font-size: 7px; color: rgba(255,255,255,0.45); }
+.lh-lines { display: flex; flex-direction: column; gap: 3.5px; }
+.lh-line { height: 3px; background: #eee; border-radius: 2px; }
+.lh-footer { margin-top: 7px; background: var(--marsala); height: 9px; border-radius: 2px; }
+.biz-card { background: var(--navy); border-radius: 6px; padding: 13px; }
+.bc-name { font-size: 11px; font-weight: 800; color: white; }
+.bc-role { font-size: 9px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.bc-contact { font-size: 9px; color: rgba(255,255,255,0.68); margin-top: 7px; line-height: 1.9; }
+
+/* ===== DIGITAL ===== */
+.digital-body { padding: 28px 36px; }
+.digital-desc { font-size: 12.5px; color: #555; max-width: 480px; margin-bottom: 18px; line-height: 1.6; }
+.social-posts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.post { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.09); }
+.post-header { padding: 8px 10px; display: flex; align-items: center; gap: 7px; background: white; border-bottom: 1px solid #f0f0f0; }
+.post-avatar { width: 25px; height: 25px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.post-avatar span { font-size: 7px; font-weight: 900; color: white; }
+.post-handle { font-size: 9px; font-weight: 700; color: #333; }
+.post-img { height: 125px; display: flex; align-items: center; justify-content: center; }
+.post-img.navy-bg { background: var(--navy); }
+.post-img.marsala-bg { background: var(--marsala); }
+.post-img.grad-bg { background: linear-gradient(135deg, var(--navy), var(--marsala)); }
+.post-caption { background: white; padding: 8px 10px; font-size: 8px; color: #666; line-height: 1.5; }
+.social-info { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.social-handles { background: #f8f8f8; border-radius: 8px; padding: 14px; }
+.social-handles-title { font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 9px; }
+.social-handles p { font-size: 11.5px; color: #555; line-height: 2; }
+.hashtags-box { background: var(--navy); border-radius: 8px; padding: 14px; }
+.hashtags-title { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.35); text-transform: uppercase; margin-bottom: 9px; }
+.hashtags-box p { font-size: 11.5px; color: white; line-height: 2; }
+
+/* ===== CONTRACAPA ===== */
+.back-cover {
+  background: var(--marsala);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  min-height: 210mm; padding: 60px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.back-cover::before {
+  content: ''; position: absolute;
+  width: 400px; height: 400px; border-radius: 50%;
+  border: 60px solid rgba(255,255,255,0.05); top: -100px; right: -100px;
+}
+.back-cover::after {
+  content: ''; position: absolute;
+  width: 300px; height: 300px; border-radius: 50%;
+  border: 40px solid rgba(255,255,255,0.05); bottom: -80px; left: -80px;
+}
+.back-cover h2 { font-size: 46px; font-weight: 900; color: white; text-transform: uppercase; margin-bottom: 10px; }
+.back-cover > p { font-size: 15px; color: rgba(255,255,255,0.62); margin-bottom: 34px; }
+.back-contact { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 22px 38px; }
+.back-contact p { font-size: 12px; color: rgba(255,255,255,0.78); margin: 4px 0; }
+
+/* ===== NAV ===== */
+.nav { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 999; }
+.nav button {
+  background: var(--navy); color: white; border: none;
+  border-radius: 8px; padding: 10px 20px; cursor: pointer;
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px;
+}
+.nav .print-btn { background: var(--marsala); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav no-print">
+  <button class="print-btn" onclick="window.print()">Salvar como PDF</button>
+</div>
+
+<!-- ==================== PÁGINA 1: CAPA ==================== -->
+<div class="page cover">
+  <div class="cover-bg"></div>
+  <div class="cover-overlay"></div>
+  <div class="cover-marsala-bar"></div>
+  <div class="cover-content">
+    <div class="cover-logo">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="160" height="160">
+        <circle cx="100" cy="100" r="90" fill="none" stroke="white" stroke-width="4"/>
+        <text x="100" y="30" text-anchor="middle" fill="white" font-size="12" font-family="Arial" font-weight="700" letter-spacing="3">ONDA SONORA</text>
+        <polyline points="20,100 40,100 50,70 60,130 70,80 80,120 90,90 100,110 110,85 120,115 130,75 140,125 150,100 170,100" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 20 140 Q 40 125 60 140 Q 80 155 100 140 Q 120 125 140 140 Q 160 155 180 140" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 20 155 Q 40 140 60 155 Q 80 170 100 155 Q 120 140 140 155 Q 160 170 180 155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h1>Manual<br>da Marca</h1>
+    <h2>Onda Sonora · COSS</h2>
+    <p class="cover-sub">Circuito Onda Sonora Saquarema · 2026</p>
+  </div>
+  <div class="page-number light">01</div>
+</div>
+
+<!-- ==================== PÁGINA 2: ÍNDICE ==================== -->
+<div class="page index-page">
+  <h1>Índice</h1>
+  <div class="index-item"><span class="index-num">01</span><span class="index-title">Mensagem da Organização</span><span class="index-dots"></span><span class="index-page-num">03</span></div>
+  <div class="index-item"><span class="index-num">02</span><span class="index-title">Conceito da Marca</span><span class="index-dots"></span><span class="index-page-num">04</span></div>
+  <div class="index-item"><span class="index-num">03</span><span class="index-title">Logo – Versões e Aplicações</span><span class="index-dots"></span><span class="index-page-num">05</span></div>
+  <div class="index-item"><span class="index-num">04</span><span class="index-title">Paleta de Cores</span><span class="index-dots"></span><span class="index-page-num">06</span></div>
+  <div class="index-item"><span class="index-num">05</span><span class="index-title">Tipografia</span><span class="index-dots"></span><span class="index-page-num">07</span></div>
+  <div class="index-item"><span class="index-num">06</span><span class="index-title">Usos Corretos e Incorretos</span><span class="index-dots"></span><span class="index-page-num">08</span></div>
+  <div class="index-item"><span class="index-num">07</span><span class="index-title">Uniformes – Atletas, Staff e Organização</span><span class="index-dots"></span><span class="index-page-num">09</span></div>
+  <div class="index-item"><span class="index-num">08</span><span class="index-title">Kit do Atleta</span><span class="index-dots"></span><span class="index-page-num">10</span></div>
+  <div class="index-item"><span class="index-num">09</span><span class="index-title">Banners e Sinalização</span><span class="index-dots"></span><span class="index-page-num">11</span></div>
+  <div class="index-item"><span class="index-num">10</span><span class="index-title">Pórtico e Estrutura de Largada</span><span class="index-dots"></span><span class="index-page-num">12</span></div>
+  <div class="index-item"><span class="index-num">11</span><span class="index-title">Premiação e Programação</span><span class="index-dots"></span><span class="index-page-num">13</span></div>
+  <div class="index-item"><span class="index-num">12</span><span class="index-title">Percurso e Logística</span><span class="index-dots"></span><span class="index-page-num">14</span></div>
+  <div class="index-item"><span class="index-num">13</span><span class="index-title">Papelaria Institucional</span><span class="index-dots"></span><span class="index-page-num">15</span></div>
+  <div class="index-item"><span class="index-num">14</span><span class="index-title">Comunicação Digital e Redes Sociais</span><span class="index-dots"></span><span class="index-page-num">16</span></div>
+  <div class="page-number">02</div>
+</div>
+
+<!-- ==================== PÁGINA 3: MENSAGEM ==================== -->
+<div class="page message-page">
+  <div class="message-left">
+    <div class="msg-label">Mensagem da</div>
+    <h2>Organização</h2>
+    <p>O Circuito Onda Sonora Saquarema nasce da vontade genuína de transformar o espaço público em palco de movimento, música e bem-estar.</p>
+    <p>Mais do que uma corrida, o COSS é uma experiência coletiva que une esporte e cultura, conectando a comunidade de Saquarema com o que há de melhor em qualidade de vida e integração social.</p>
+    <p>Nossas cores, nosso logo e nossa comunicação foram desenvolvidos para traduzir essa energia única — a força do oceano e o pulso da música, fundidos em uma só identidade.</p>
+    <p>A cada edição do COSS, fortalecemos a mensagem: <strong style="color:white">Movimento, Música e Bem-Estar!</strong></p>
+    <p style="color:rgba(255,255,255,0.35);margin-top:10px;font-size:12px">Um abraço,</p>
+    <div class="msg-signature">Fernanda Koenigsdorf &amp; Paula Bravo<span>Organizadoras – COSS 2026</span></div>
+  </div>
+  <div class="message-right">
+    <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.55.jpeg" alt="Igreja de Saquarema – Ponto Turístico">
+    <div class="message-right-overlay"></div>
+    <div class="message-right-logo">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+        <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2.5"/>
+        <text x="40" y="13" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-family="Arial" font-weight="700" letter-spacing="1.5">ONDA SONORA</text>
+        <polyline points="8,40 15,40 18.5,28 22,52 25.5,36 29,44 32.5,38 36,42 39.5,36.5 43,43 46.5,33 50,47 53.5,40 60,40" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 8 54 Q 17 48 26 54 Q 35 60 44 54 Q 53 48 62 54" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M 8 62 Q 17 56 26 62 Q 35 68 44 62 Q 53 56 62 62" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="page-number light">03</div>
+</div>
+
+<!-- ==================== PÁGINA 4: CONCEITO ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item active"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Conceito da</div>
+          <h2>Marca Onda Sonora</h2>
+        </div>
+      </div>
+      <div class="concept-body">
+        <div class="concept-text">
+          <h3>A identidade do COSS</h3>
+          <p>A identidade visual do <strong>COSS – Circuito Onda Sonora Saquarema</strong> foi concebida para traduzir a fusão perfeita entre dois universos que definem o evento.</p>
+          <p><strong>A Onda</strong> — símbolo do mar de Saquarema, da cidade que respira esporte e natureza, representando movimento, fluxo e energia oceânica.</p>
+          <p><strong>O Som</strong> — a onda sonora, o pulso musical que energiza cada corredor e transforma a corrida em experiência sensorial única.</p>
+          <p>Juntos, esses dois elementos formam um logo circular, dinâmico e memorável, que carrega a essência do evento: <em>Movimento, Música e Bem-Estar.</em></p>
+        </div>
+        <div class="concept-visual">
+          <div class="c-row">
+            <div style="text-align:center">
+              <div class="c-circle" style="width:150px;height:150px;background:var(--navy);margin:0 auto">
+                <div>
+                  <div class="c-label">ONDA</div>
+                  <div class="c-sub">Mar · Movimento<br>Saquarema</div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align:center">
+              <div class="c-circle" style="width:150px;height:150px;background:var(--marsala);margin:0 auto">
+                <div>
+                  <div class="c-label">SOM</div>
+                  <div class="c-sub">Música · Energia<br>DJ Set</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:10px">
+            <div class="c-circle" style="width:170px;height:170px;background:linear-gradient(135deg,var(--navy),var(--marsala));margin:0 auto">
+              <div>
+                <div class="c-label">ONDA<br>SONORA</div>
+                <div class="c-sub" style="font-size:10px;opacity:0.75">Corrida · Música<br>Bem-Estar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">04</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 5: LOGO ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item active"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Identidade Visual</div>
+          <h2>Logo – Versões</h2>
+        </div>
+      </div>
+      <div class="logo-body">
+        <p class="logo-desc">O logo do Onda Sonora pode ser aplicado em três versões conforme o fundo e contexto de uso. Nunca distorça, recolora ou altere as proporções do logo.</p>
+        <div class="logo-grid">
+          <div class="logo-box">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="96" height="96">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="#1B2A4A" stroke-width="3"/>
+              <text x="60" y="16" text-anchor="middle" fill="#1B2A4A" font-size="7" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
+              <polyline points="8,60 20,60 26,42 32,78 38,50 44,70 50,56 56,66 62,53 68,69 74,45 80,73 86,60 100,60" fill="none" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 8 82 Q 20 73 32 82 Q 44 91 56 82 Q 68 73 80 82 Q 92 91 104 82" fill="none" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 8 92 Q 20 83 32 92 Q 44 101 56 92 Q 68 83 80 92 Q 92 101 104 92" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+            <p>Versão Principal<br><strong>Fundo Claro</strong></p>
+          </div>
+          <div class="logo-box dark">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="96" height="96">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="white" stroke-width="3"/>
+              <text x="60" y="16" text-anchor="middle" fill="white" font-size="7" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
+              <polyline points="8,60 20,60 26,42 32,78 38,50 44,70 50,56 56,66 62,53 68,69 74,45 80,73 86,60 100,60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 8 82 Q 20 73 32 82 Q 44 91 56 82 Q 68 73 80 82 Q 92 91 104 82" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 8 92 Q 20 83 32 92 Q 44 101 56 92 Q 68 83 80 92 Q 92 101 104 92" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <p>Versão Negativa<br><strong>Fundo Navy</strong></p>
+          </div>
+          <div class="logo-box marsala">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="96" height="96">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="white" stroke-width="3"/>
+              <text x="60" y="16" text-anchor="middle" fill="white" font-size="7" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
+              <polyline points="8,60 20,60 26,42 32,78 38,50 44,70 50,56 56,66 62,53 68,69 74,45 80,73 86,60 100,60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 8 82 Q 20 73 32 82 Q 44 91 56 82 Q 68 73 80 82 Q 92 91 104 82" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 8 92 Q 20 83 32 92 Q 44 101 56 92 Q 68 83 80 92 Q 92 101 104 92" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <p>Versão Negativa<br><strong>Fundo Marsala</strong></p>
+          </div>
+        </div>
+        <div class="logo-rules">
+          <div>
+            <div style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:8px;letter-spacing:1px">Área de Proteção</div>
+            <div style="width:78px;height:78px;border:2px dashed #ccc;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative">
+              <div style="width:56px;height:56px;border-radius:50%;background:var(--navy);opacity:0.18"></div>
+              <div style="position:absolute;font-size:8px;color:#999;bottom:-17px;white-space:nowrap">Mínimo: 1× o diâmetro</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:8px;letter-spacing:1px">Tamanho Mínimo</div>
+            <div style="display:flex;gap:20px;align-items:flex-end">
+              <div style="text-align:center">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><circle cx="30" cy="30" r="27" fill="none" stroke="#1B2A4A" stroke-width="3"/><text x="30" y="11" text-anchor="middle" fill="#1B2A4A" font-size="4" font-family="Arial" font-weight="700">ONDA</text><polyline points="4,30 12,30 15,21 18,39 21,25 24,35 27,28 30,33 33,26.5 36,34.5 39,22.5 42,36.5 45,30 52,30" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div style="font-size:9px;color:#888;margin-top:4px">Digital<br>30px</div>
+              </div>
+              <div style="text-align:center">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="44" height="44"><circle cx="30" cy="30" r="27" fill="none" stroke="#1B2A4A" stroke-width="3"/><text x="30" y="11" text-anchor="middle" fill="#1B2A4A" font-size="4" font-family="Arial" font-weight="700">ONDA</text><polyline points="4,30 12,30 15,21 18,39 21,25 24,35 27,28 30,33 33,26.5 36,34.5 39,22.5 42,36.5 45,30 52,30" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div style="font-size:9px;color:#888;margin-top:4px">Impresso<br>15mm</div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1">
+            <div style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:8px;letter-spacing:1px">Regras de Uso</div>
+            <div style="font-size:11px;color:#555;line-height:2">
+              • Nunca distorça ou estique o logo<br>
+              • Nunca aplique sombra ou efeitos<br>
+              • Nunca use sobre fotos sem overlay<br>
+              • Nunca altere as cores originais
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">05</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 6: PALETA ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item active"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Identidade Visual</div>
+          <h2>Paleta de Cores</h2>
+        </div>
+      </div>
+      <div class="palette-body">
+        <p class="palette-desc">As cores da identidade COSS traduzem a força do mar, a energia esportiva e a identidade única de Saquarema. Apenas estas cores devem ser utilizadas em toda comunicação oficial.</p>
+        <div class="palette-grid">
+          <div class="color-card">
+            <div class="color-swatch" style="background:#1B2A4A"></div>
+            <div class="color-info">
+              <div class="color-name">Deep Navy</div>
+              <div class="color-hex">#1B2A4A</div>
+              <div class="color-cmyk">C:83 M:71 Y:36 K:22</div>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background:#8B2252"></div>
+            <div class="color-info">
+              <div class="color-name">Vital Garnet</div>
+              <div class="color-hex">#8B2252</div>
+              <div class="color-cmyk">C:34 M:90 Y:47 K:30</div>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background:#FFFFFF;border:1px solid #eee"></div>
+            <div class="color-info">
+              <div class="color-name">Branco Puro</div>
+              <div class="color-hex">#FFFFFF</div>
+              <div class="color-cmyk">C:0 M:0 Y:0 K:0</div>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background:#F2F2F2"></div>
+            <div class="color-info">
+              <div class="color-name">Cinza Neutro</div>
+              <div class="color-hex">#F2F2F2</div>
+              <div class="color-cmyk">C:0 M:0 Y:0 K:5</div>
+            </div>
+          </div>
+        </div>
+        <div class="palette-bar" style="margin-top:22px">
+          <div class="pbar-seg" style="flex:3;background:#1B2A4A">Deep Navy — 60%</div>
+          <div class="pbar-seg" style="flex:2;background:#8B2252">Vital Garnet — 30%</div>
+          <div class="pbar-seg" style="flex:1;background:#F2F2F2;color:#999">Neutros 10%</div>
+        </div>
+        <div style="margin-top:20px;padding:14px 16px;background:#f8f8f8;border-radius:8px">
+          <div style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:10px;letter-spacing:1px">Aplicação em Gradiente</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div style="height:60px;border-radius:6px;background:linear-gradient(135deg,#1B2A4A,#8B2252);display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700">Navy → Garnet</div>
+            <div style="height:60px;border-radius:6px;background:linear-gradient(135deg,#8B2252,#1B2A4A);display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700">Garnet → Navy</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">06</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 7: TIPOGRAFIA ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item active"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Identidade Visual</div>
+          <h2>Tipografia</h2>
+        </div>
+      </div>
+      <div class="typo-body">
+        <p class="typo-desc">A família tipográfica oficial do COSS é a <strong>Montserrat</strong>, escolhida por sua modernidade, legibilidade e personalidade esportiva.</p>
+        <div class="typo-row"><span class="typo-lbl">Black 900</span><span style="font-size:34px;font-weight:900;color:var(--navy)">ONDA SONORA</span></div>
+        <div class="typo-row"><span class="typo-lbl">Bold 700</span><span style="font-size:26px;font-weight:700;color:var(--navy)">Circuito Onda Sonora</span></div>
+        <div class="typo-row"><span class="typo-lbl">SemiBold 600</span><span style="font-size:20px;font-weight:600;color:var(--navy)">Movimento, Música e Bem-Estar</span></div>
+        <div class="typo-row"><span class="typo-lbl">Regular 400</span><span style="font-size:15px;font-weight:400;color:var(--navy)">Praça do Coração · Saquarema · Julho 2026</span></div>
+        <div class="typo-row"><span class="typo-lbl">Light 300</span><span style="font-size:13px;font-weight:300;color:#888">Evento aberto à comunidade · 5km · DJ Set · 17h às 00h</span></div>
+        <div class="typo-grid">
+          <div class="typo-card">
+            <div class="typo-card-lbl">Títulos de Seção</div>
+            <div style="font-size:22px;font-weight:900;color:var(--navy);text-transform:uppercase;line-height:1.1">Manual<br>da Marca</div>
+            <div style="font-size:11px;font-weight:300;color:#888;margin-top:7px">Caixa Alta · Peso 900 · Cor Navy</div>
+          </div>
+          <div class="typo-card">
+            <div class="typo-card-lbl">Subtítulos</div>
+            <div style="font-size:16px;font-weight:700;color:var(--marsala);line-height:1.35">Identidade Visual<br>COSS 2026</div>
+            <div style="font-size:11px;font-weight:300;color:#888;margin-top:7px">Caixa Mista · Peso 700 · Cor Garnet</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">07</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 8: USOS ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item active"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Identidade Visual</div>
+          <h2>Usos Corretos e Incorretos</h2>
+        </div>
+      </div>
+      <div class="usage-body">
+        <div class="usage-grid">
+          <div class="usage-box correct">
+            <div class="usage-tag">✅ Use assim</div>
+            <div class="usage-item" style="background:var(--navy)">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:white;font-size:12px;font-weight:600">Logo branco em fundo Navy</span>
+            </div>
+            <div class="usage-item" style="background:var(--marsala)">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:white;font-size:12px;font-weight:600">Logo branco em fundo Marsala</span>
+            </div>
+            <div class="usage-item" style="background:white;border:1px solid #eee">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="#1B2A4A" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:var(--navy);font-size:12px;font-weight:600">Logo Navy em fundo branco</span>
+            </div>
+          </div>
+          <div class="usage-box wrong">
+            <div class="usage-tag">❌ Não use assim</div>
+            <div class="usage-item" style="background:#FFD700">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="#FF0000" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#333;font-size:12px;font-weight:600">Cores fora da paleta oficial</span>
+            </div>
+            <div class="usage-item" style="background:#eee">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38" style="transform:scaleX(-1)"><circle cx="25" cy="25" r="22" fill="none" stroke="#1B2A4A" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#555;font-size:12px;font-weight:600">Logo espelhado ou rotacionado</span>
+            </div>
+            <div class="usage-item" style="background:#eee">
+              <svg viewBox="0 0 66 44" xmlns="http://www.w3.org/2000/svg" width="62" height="30"><circle cx="33" cy="22" r="20" fill="none" stroke="#1B2A4A" stroke-width="2"/><polyline points="5,22 13,22 16,14 19,30 22,18 25,26 28,20 31,24 34,18.5 37,23.5 40,14 43,28 46,22 53,22" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#555;font-size:12px;font-weight:600">Logo distorcido / esticado</span>
+            </div>
+          </div>
+        </div>
+        <div class="usage-rules">
+          <div class="usage-rules-title">Regras Fundamentais</div>
+          <div class="usage-rules-grid">
+            <span>• Nunca altere as proporções do logo</span>
+            <span>• Nunca aplique sombra ou efeitos</span>
+            <span>• Nunca use sobre fotos sem overlay</span>
+            <span>• Nunca use tipografia diferente</span>
+            <span>• Nunca use cores fora da paleta oficial</span>
+            <span>• Nunca isole elementos do logo</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">08</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 9: UNIFORMES ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item active"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Comunicação</div>
+          <h2>Uniformes Oficiais</h2>
+        </div>
+      </div>
+      <div class="uniform-body">
+        <p class="uniform-intro">Veste tecnológica de alta performance. Ambas as opções com o logo oficial circular (Onda + Frequência Sonora) em silk branco.</p>
+        <div class="uniform-photos">
+          <div class="uniform-photo-card">
+            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (2).jpeg" alt="Camiseta Masculina Deep Navy">
+            <div class="uniform-photo-label">Modelo Masculino</div>
+            <div class="uniform-photo-desc">Deep Navy · Logo branco central<br>Número atleta nas costas</div>
+          </div>
+          <div class="uniform-photo-card">
+            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (1).jpeg" alt="Camiseta Feminina Vital Garnet">
+            <div class="uniform-photo-label">Modelo Feminino</div>
+            <div class="uniform-photo-desc">Vital Garnet · Logo branco central<br>Número atleta nas costas</div>
+          </div>
+          <div class="uniform-photo-card">
+            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (3).jpeg" alt="Camiseta Staff Sublimada">
+            <div class="uniform-photo-label">Staff / Organização</div>
+            <div class="uniform-photo-desc">Navy sublimado · Textura ondas<br>Logo peito esquerdo</div>
+          </div>
+        </div>
+        <div class="uniform-specs">
+          <div class="spec-box">
+            <div class="spec-title">Posicionamento do Logo</div>
+            <div class="spec-list">
+              • Peito esquerdo: logo pequeno<br>
+              • Frente central: logo principal<br>
+              • Costas: número do atleta<br>
+              • Manga direita: patrocinador
+            </div>
+          </div>
+          <div class="spec-box">
+            <div class="spec-title">Tecido e Especificações</div>
+            <div class="spec-list">
+              • Dry-fit 100% poliéster<br>
+              • Sublimação total ou silk screen<br>
+              • Numeração termocolante<br>
+              • Tamanhos P ao XGG
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">09</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 10: KIT ATLETA ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item active"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Comunicação</div>
+          <h2>Kit do Atleta</h2>
+        </div>
+      </div>
+      <div class="kit-body">
+        <p style="font-size:12.5px;color:#555;margin-bottom:20px;line-height:1.6">Experiência tátil e sustentável. Composto por itens de utilidade prática com a identidade visual oficial do COSS.</p>
+        <div class="kit-layout">
+          <div class="kit-photo">
+            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (1).jpeg" alt="Kit do Atleta COSS – Ecobag, Squeeze, Número de Peito">
+          </div>
+          <div>
+            <div class="kit-items-list">
+              <div class="kit-item-row">
+                <div class="kit-item-num">01</div>
+                <div class="kit-item-info">
+                  <h4>Ecobag Branca</h4>
+                  <p>Algodão cru · Logo central silk</p>
+                </div>
+              </div>
+              <div class="kit-item-row marsala-row">
+                <div class="kit-item-num" style="color:white;opacity:0.7">02</div>
+                <div class="kit-item-info">
+                  <h4>Squeeze Metálico Grenã</h4>
+                  <p>500ml · Inox · Reutilizável</p>
+                </div>
+              </div>
+              <div class="kit-item-row">
+                <div class="kit-item-num">03</div>
+                <div class="kit-item-info">
+                  <h4>Número de Peito Navy</h4>
+                  <p>21×18cm · Chip incluso · Termocolante</p>
+                </div>
+              </div>
+              <div class="kit-item-row marsala-row">
+                <div class="kit-item-num" style="color:white;opacity:0.7">04</div>
+                <div class="kit-item-info">
+                  <h4>Camiseta Oficial</h4>
+                  <p>Dry-fit · Navy ou Garnet</p>
+                </div>
+              </div>
+              <div class="kit-item-row">
+                <div class="kit-item-num">05</div>
+                <div class="kit-item-info">
+                  <h4>Medalha de Finisher</h4>
+                  <p>Todos os finishers · Personalizada</p>
+                </div>
+              </div>
+            </div>
+            <div class="kit-cta">
+              <p>Retirada dos kits: <strong>1 hora antes da largada</strong><br>Local: Tenda de Inscrições · Praça do Coração</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">10</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 11: BANNERS ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item active"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Comunicação</div>
+          <h2>Banners e Sinalização</h2>
+        </div>
+      </div>
+      <div class="banners-body">
+        <p class="banners-intro">Elementos visuais e cenográficos que garantem identidade, orientação e experiência imersiva ao longo de todo o percurso do COSS.</p>
+        <div class="banners-photos">
+          <div class="banner-photo">
+            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (3).jpeg" alt="Windflags e Totens – Hidratação, Largada, Preserve a Praça">
+            <div class="banner-photo-label">Windflags e Totens</div>
+            <div class="banner-photo-desc">Hidratação · Largada · Preserve a Praça<br>Navy e Marsala com logo branco</div>
+          </div>
+          <div class="banner-photo">
+            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54.jpeg" alt="Bandeiras e Sinalização Direcional na Praia">
+            <div class="banner-photo-label">Bandeiras e Sinalização Direcional</div>
+            <div class="banner-photo-desc">Main Stage · Food Court · Beach Access<br>Windflags Navy e Garnet</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+          <div style="background:var(--navy);border-radius:8px;padding:12px;text-align:center;color:white">
+            <div style="font-size:18px;font-weight:900">06</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.55);margin-top:3px;text-transform:uppercase">Windflags</div>
+          </div>
+          <div style="background:var(--marsala);border-radius:8px;padding:12px;text-align:center;color:white">
+            <div style="font-size:18px;font-weight:900">04</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.55);margin-top:3px;text-transform:uppercase">Totens</div>
+          </div>
+          <div style="background:var(--navy);border-radius:8px;padding:12px;text-align:center;color:white">
+            <div style="font-size:18px;font-weight:900">02</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.55);margin-top:3px;text-transform:uppercase">Backdrops</div>
+          </div>
+          <div style="background:var(--marsala);border-radius:8px;padding:12px;text-align:center;color:white">
+            <div style="font-size:18px;font-weight:900">01</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.55);margin-top:3px;text-transform:uppercase">Blimp</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">11</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 12: PÓRTICO ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item active"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Comunicação</div>
+          <h2>Pórtico e Largada</h2>
+        </div>
+      </div>
+      <div class="portico-body">
+        <div class="portico-hero">
+          <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (2).jpeg" alt="Pórtico Inflável Onda Sonora com corredores ao pôr do sol">
+          <div class="portico-hero-overlay"></div>
+          <div class="portico-hero-text">
+            <h3>Pórtico Inflável Oficial</h3>
+            <p>Largada e chegada · Praça do Coração · Saquarema</p>
+          </div>
+        </div>
+        <div class="portico-info">
+          <div class="portico-specs">
+            <div class="portico-spec">
+              <div class="portico-spec-val">8m</div>
+              <div class="portico-spec-lbl">Altura</div>
+            </div>
+            <div class="portico-spec marsala-bg">
+              <div class="portico-spec-val">Navy</div>
+              <div class="portico-spec-lbl">Cor Principal</div>
+            </div>
+            <div class="portico-spec">
+              <div class="portico-spec-val">4 faces</div>
+              <div class="portico-spec-lbl">Logo visível</div>
+            </div>
+          </div>
+          <div class="portico-desc">
+            Pórtico inflável nas cores oficiais Navy e Marsala com o logo Onda Sonora em todas as faces. Serve simultaneamente como estrutura de largada e chegada, com cronômetro oficial integrado. Cronometragem eletrônica certificada para todos os finishers.
+          </div>
+        </div>
+      </div>
+      <div class="page-number">12</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 13: PREMIAÇÃO ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item active"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Comunicação</div>
+          <h2>Premiação e Programação</h2>
+        </div>
+      </div>
+      <div class="premiacao-body">
+        <div class="premiacao-hero">
+          <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (4).jpeg" alt="Evento ao vivo com palco, luzes e atividades de yoga">
+          <div class="premiacao-hero-overlay"></div>
+        </div>
+        <div class="premiacao-info">
+          <div class="premiacao-grid">
+            <div class="premio-card">
+              <div class="premio-pos">1°</div>
+              <div class="premio-label">Geral Masc. / Fem.</div>
+              <div class="premio-prize">Troféu + Brindes Premium</div>
+            </div>
+            <div class="premio-card">
+              <div class="premio-pos">2°</div>
+              <div class="premio-label">Geral Masc. / Fem.</div>
+              <div class="premio-prize">Troféu + Kit Patrocinador</div>
+            </div>
+            <div class="premio-card">
+              <div class="premio-pos">3°</div>
+              <div class="premio-label">Geral Masc. / Fem.</div>
+              <div class="premio-prize">Troféu + Brinde Oficial</div>
+            </div>
+          </div>
+          <div class="premiacao-schedule">
+            <strong>Programação do Evento:</strong><br>
+            17h00 – Abertura + DJ Set (recepção) &nbsp;|&nbsp; 17h30 – Aulão de Aquecimento no Palco &nbsp;|&nbsp;
+            18h00 – Largada Corrida 5km &nbsp;|&nbsp; 18h30 – Aula Funcional / Yoga &nbsp;|&nbsp;
+            20h00 – Premiação no Palco Principal &nbsp;|&nbsp; 20h30–23h30 – DJ Headline (eletrônico leve)
+          </div>
+        </div>
+      </div>
+      <div class="page-number">13</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 14: PERCURSO ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item active"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Logística</div>
+          <h2>Percurso e Logística</h2>
+        </div>
+      </div>
+      <div class="route-body">
+        <div class="route-layout">
+          <div class="route-photo">
+            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53.jpeg" alt="Vista de Saquarema – Mar e Igreja N. Sra. de Nazareth">
+            <div style="margin-top:12px;padding:12px 14px;background:var(--marsala);border-radius:8px;color:white">
+              <div style="font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Local do Evento</div>
+              <div style="font-size:13px;font-weight:700">Praça do Coração</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.75);margin-top:2px">Rua Ari Parreiras · Saquarema – RJ</div>
+            </div>
+          </div>
+          <div class="route-info-col">
+            <div class="route-stat">
+              <div class="route-stat-val">5</div>
+              <div class="route-stat-lbl">km Percurso</div>
+            </div>
+            <div class="route-stat marsala-bg">
+              <div class="route-stat-val">18h</div>
+              <div class="route-stat-lbl">Largada Oficial</div>
+            </div>
+            <div class="route-stat">
+              <div class="route-stat-val">500+</div>
+              <div class="route-stat-lbl">Participantes</div>
+            </div>
+            <div class="route-stat marsala-bg">
+              <div class="route-stat-val">1</div>
+              <div class="route-stat-lbl">Ponto Hidratação</div>
+            </div>
+          </div>
+        </div>
+        <div class="route-points">
+          <strong>Pontos do Percurso:</strong><br>
+          Largada/Chegada: Praça do Coração &nbsp;·&nbsp; Hidratação: Col. Gustavo Campos da Silveira<br>
+          Sinalização: Cones, windflags e staff completo &nbsp;·&nbsp; Cronometragem eletrônica oficial<br>
+          Apoio: Guarda Municipal + Ambulância + Defesa Civil &nbsp;·&nbsp; Aula Yoga: Alto do Morro N. Sra. de Nazareth
+        </div>
+      </div>
+      <div class="page-number">14</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 15: PAPELARIA ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item active"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Comunicação</div>
+          <h2>Papelaria Institucional</h2>
+        </div>
+      </div>
+      <div class="paper-body">
+        <div class="paper-grid">
+          <div class="paper-card">
+            <div class="paper-card-title">Papel Timbrado</div>
+            <div class="letterhead">
+              <div class="lh-header">
+                <div class="lh-logo">ONDA SONORA · COSS</div>
+                <div class="lh-tagline">Circuito Onda Sonora Saquarema · 2026</div>
+              </div>
+              <div class="lh-lines">
+                <div class="lh-line" style="width:90%"></div>
+                <div class="lh-line" style="width:82%"></div>
+                <div class="lh-line" style="width:87%"></div>
+                <div class="lh-line" style="width:64%"></div>
+                <div class="lh-line" style="width:73%"></div>
+              </div>
+              <div class="lh-footer"></div>
+            </div>
+          </div>
+          <div class="paper-card">
+            <div class="paper-card-title">Cartão Institucional</div>
+            <div class="biz-card">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div>
+                  <div class="bc-name">Fernanda Koenigsdorf</div>
+                  <div class="bc-role">Organizadora · COSS 2026</div>
+                </div>
+                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" width="22" height="22"><circle cx="15" cy="15" r="13" fill="none" stroke="white" stroke-width="2"/><polyline points="2,15 7,15 8.75,10.5 10.5,19.5 12.25,13 14,17.5 15,14.5 16.75,16.5 17.75,13.5 19.25,17.5 21,11 22.25,18.5 23.75,15 27,15" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="bc-contact">
+                fernanda@ondasonora.com.br<br>
+                (21) 9 0000-0000<br>
+                ondasonora.com.br<br>
+                Saquarema – RJ
+              </div>
+            </div>
+          </div>
+          <div class="paper-card">
+            <div class="paper-card-title">Assinatura de E-mail</div>
+            <div style="background:white;border-radius:4px;padding:11px;border-left:4px solid var(--marsala)">
+              <div style="font-size:11px;font-weight:800;color:var(--navy)">Fernanda Koenigsdorf</div>
+              <div style="font-size:10px;color:var(--marsala);margin-top:2px">Organizadora – COSS Onda Sonora</div>
+              <div style="display:flex;gap:8px;margin-top:7px;align-items:center">
+                <div style="background:var(--navy);border-radius:3px;padding:2px 7px"><span style="font-size:8px;color:white;font-weight:900">ONDA SONORA</span></div>
+                <span style="font-size:9px;color:#aaa">ondasonora.com.br</span>
+              </div>
+            </div>
+          </div>
+          <div class="paper-card">
+            <div class="paper-card-title">Envelope Oficial</div>
+            <div style="background:white;border-radius:4px;padding:10px;border:1px solid #ddd;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--marsala))"></div>
+              <div style="margin-top:8px;font-size:8px;color:#aaa">DE:</div>
+              <div style="font-size:9.5px;font-weight:800;color:var(--navy)">COSS – Onda Sonora</div>
+              <div style="font-size:8.5px;color:#888">Saquarema – RJ · ondasonora.com.br</div>
+              <div style="margin-top:10px;font-size:8px;color:#aaa">PARA:</div>
+              <div style="height:8px;background:#f0f0f0;border-radius:2px;margin-top:3px"></div>
+              <div style="height:6px;background:#f0f0f0;border-radius:2px;margin-top:3px;width:68%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">15</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 16: DIGITAL ==================== -->
+<div class="page">
+  <div class="page-inner">
+    <nav class="sidebar">
+      <div class="sidebar-title">Índice</div>
+      <div class="s-item"><span class="s-num">01</span>Mensagem</div>
+      <div class="s-item"><span class="s-num">02</span>Conceito</div>
+      <div class="s-item"><span class="s-num">03</span>Logo</div>
+      <div class="s-item"><span class="s-num">04</span>Paleta de Cores</div>
+      <div class="s-item"><span class="s-num">05</span>Tipografia</div>
+      <div class="s-item"><span class="s-num">06</span>Usos Corretos</div>
+      <div class="s-item"><span class="s-num">07</span>Uniformes</div>
+      <div class="s-item"><span class="s-num">08</span>Kit Atleta</div>
+      <div class="s-item"><span class="s-num">09</span>Banners</div>
+      <div class="s-item"><span class="s-num">10</span>Pórtico</div>
+      <div class="s-item"><span class="s-num">11</span>Premiação</div>
+      <div class="s-item"><span class="s-num">12</span>Percurso</div>
+      <div class="s-item"><span class="s-num">13</span>Papelaria</div>
+      <div class="s-item active"><span class="s-num">14</span>Digital</div>
+    </nav>
+    <div class="page-main">
+      <div class="section-header">
+        <div class="sec-hd-text">
+          <div class="sec-label">Comunicação</div>
+          <h2>Comunicação Digital</h2>
+        </div>
+      </div>
+      <div class="digital-body">
+        <p class="digital-desc">Templates de postagens para Instagram, Facebook e WhatsApp seguindo estritamente a identidade visual do COSS – somente Navy e Garnet.</p>
+        <div class="social-posts">
+          <div class="post">
+            <div class="post-header">
+              <div class="post-avatar"><span>OS</span></div>
+              <div><div class="post-handle">@ondasonora_saq</div><div style="font-size:8px;color:#aaa">Saquarema, RJ</div></div>
+            </div>
+            <div class="post-img navy-bg">
+              <div style="text-align:center;padding:14px">
+                <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase">Circuito</div>
+                <div style="font-size:21px;font-weight:900;color:white;line-height:1.05">ONDA<br>SONORA</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.55);margin-top:4px">Julho · Saquarema</div>
+              </div>
+            </div>
+            <div class="post-caption">🌊 Prepare-se! O COSS 2026 está chegando. Corrida 5km + DJ Set na Praça do Coração! #OndaSonora #Saquarema</div>
+          </div>
+          <div class="post">
+            <div class="post-header">
+              <div class="post-avatar"><span>OS</span></div>
+              <div><div class="post-handle">@ondasonora_saq</div><div style="font-size:8px;color:#aaa">Saquarema, RJ</div></div>
+            </div>
+            <div class="post-img marsala-bg">
+              <div style="text-align:center;padding:14px">
+                <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.65);letter-spacing:2px">INSCRIÇÕES ABERTAS</div>
+                <div style="font-size:20px;font-weight:900;color:white;margin:5px 0">5KM</div>
+                <div style="background:rgba(255,255,255,0.18);border-radius:20px;padding:3px 13px;display:inline-block">
+                  <div style="font-size:8px;color:white;font-weight:700">COSS 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="post-caption">✅ Inscrições abertas para o COSS 2026! Garanta sua vaga e venha fazer parte dessa energia! #COSS #Corrida5km</div>
+          </div>
+          <div class="post">
+            <div class="post-header">
+              <div class="post-avatar"><span>OS</span></div>
+              <div><div class="post-handle">@ondasonora_saq</div><div style="font-size:8px;color:#aaa">Saquarema, RJ</div></div>
+            </div>
+            <div class="post-img grad-bg">
+              <div style="text-align:center;padding:14px">
+                <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.65);letter-spacing:2px">PROGRAMAÇÃO</div>
+                <div style="font-size:10px;font-weight:700;color:white;line-height:1.75;margin-top:5px">
+                  17h – Abertura + DJ<br>
+                  18h – Corrida 5km<br>
+                  20h – Premiação<br>
+                  20h30 – DJ Headline
+                </div>
+              </div>
+            </div>
+            <div class="post-caption">📅 Confira a programação completa do COSS 2026! Uma noite inesquecível te espera 🎵🏃</div>
+          </div>
+        </div>
+        <div class="social-info">
+          <div class="social-handles">
+            <div class="social-handles-title">Handles Oficiais</div>
+            <p>
+              Instagram: @ondasonora_saq<br>
+              Facebook: /ondasonorasaq<br>
+              Website: ondasonora.com.br
+            </p>
+          </div>
+          <div class="hashtags-box">
+            <div class="hashtags-title">Hashtags Oficiais</div>
+            <p>#OndaSonora &nbsp; #COSS2026<br>#Saquarema &nbsp; #CorreSaquarema<br>#MovimentoMusicaBemEstar</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">16</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 17: CONTRACAPA ==================== -->
+<div class="page back-cover">
+  <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" width="110" height="110" style="margin-bottom:18px;position:relative;z-index:2">
+    <circle cx="70" cy="70" r="64" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
+    <text x="70" y="22" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="9" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
+    <polyline points="14,70 28,70 35,49 42,91 49,56 56,84 63,63 70,77 77,59.5 84,80.5 91,52.5 98,87.5 105,70 119,70" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 14 98 Q 28 87.5 42 98 Q 56 108.5 70 98 Q 84 87.5 98 98 Q 112 108.5 126 98" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 14 110 Q 28 99.5 42 110 Q 56 120.5 70 110 Q 84 99.5 98 110 Q 112 120.5 126 110" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <h2 style="position:relative;z-index:2">Onda Sonora</h2>
+  <p style="position:relative;z-index:2">Movimento · Música · Bem-Estar</p>
+  <div class="back-contact" style="position:relative;z-index:2">
+    <p style="font-weight:800;color:white;font-size:13px;margin-bottom:8px">COSS – Circuito Onda Sonora Saquarema</p>
+    <p>Praça do Coração · Saquarema – RJ</p>
+    <p>18 de Julho de 2026 · 17h às 00h</p>
+    <p>contato@ondasonora.com.br</p>
+    <p>ondasonora.com.br · @ondasonora_saq</p>
+    <p style="margin-top:10px;color:rgba(255,255,255,0.35);font-size:10px">© 2026 COSS Onda Sonora. Todos os direitos reservados.</p>
+  </div>
+  <div class="page-number light">17</div>
+</div>
+
+</body>
+</html>
