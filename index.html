@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Manual da Marca COSS – Circuito Onda Sonora Saquarema 2026. Identidade visual, logo, paleta de cores, tipografia e aplicações.">
+<meta name="author" content="COSS – Circuito Onda Sonora Saquarema">
 <title>Manual da Marca COSS – Circuito Onda Sonora Saquarema</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap');
 * { margin:0; padding:0; box-sizing:border-box; }
 :root {
   --navy: #1B2A4A;
@@ -23,10 +28,14 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
   page-break-after: always;
 }
 @media print {
-  body { background: white; }
-  .page { margin: 0; width: 100%; min-height: 210mm; page-break-after: always; }
-  .no-print { display: none; }
+  body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; color-adjust: exact; }
+  .page { margin: 0; width: 100%; min-height: 210mm; page-break-after: always; page-break-inside: avoid; }
+  .no-print { display: none !important; }
+  img { max-width: 100%; page-break-inside: avoid; }
+  .section-header, .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+/* Otimização de imagens */
+img { image-rendering: -webkit-optimize-contrast; }
 
 /* ===== SIDEBAR LAYOUT ===== */
 .page-inner {
@@ -135,7 +144,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
 .cover-bg {
   position: absolute;
   inset: 0;
-  background-image: url('imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53.jpeg');
+  background-image: url('imagens_coss/banner-praia.jpeg');
   background-size: cover;
   background-position: center 30%;
 }
@@ -566,13 +575,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
   <div class="cover-marsala-bar"></div>
   <div class="cover-content">
     <div class="cover-logo">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="160" height="160">
-        <circle cx="100" cy="100" r="90" fill="none" stroke="white" stroke-width="4"/>
-        <text x="100" y="30" text-anchor="middle" fill="white" font-size="12" font-family="Arial" font-weight="700" letter-spacing="3">ONDA SONORA</text>
-        <polyline points="20,100 40,100 50,70 60,130 70,80 80,120 90,90 100,110 110,85 120,115 130,75 140,125 150,100 170,100" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 20 140 Q 40 125 60 140 Q 80 155 100 140 Q 120 125 140 140 Q 160 155 180 140" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
-        <path d="M 20 155 Q 40 140 60 155 Q 80 170 100 155 Q 120 140 140 155 Q 160 170 180 155" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS Onda Sonora" width="160" height="160">
     </div>
     <h1>Manual<br>da Marca</h1>
     <h2>Onda Sonora · COSS</h2>
@@ -614,16 +617,10 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
     <div class="msg-signature">Fernanda Koenigsdorf &amp; Paula Bravo<span>Organizadoras – COSS 2026</span></div>
   </div>
   <div class="message-right">
-    <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.55.jpeg" alt="Igreja de Saquarema – Ponto Turístico">
+    <img src="imagens_coss/portico-praca.png" alt="Igreja de Saquarema – Ponto Turístico">
     <div class="message-right-overlay"></div>
     <div class="message-right-logo">
-      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
-        <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2.5"/>
-        <text x="40" y="13" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-family="Arial" font-weight="700" letter-spacing="1.5">ONDA SONORA</text>
-        <polyline points="8,40 15,40 18.5,28 22,52 25.5,36 29,44 32.5,38 36,42 39.5,36.5 43,43 46.5,33 50,47 53.5,40 60,40" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 8 54 Q 17 48 26 54 Q 35 60 44 54 Q 53 48 62 54" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M 8 62 Q 17 56 26 62 Q 35 68 44 62 Q 53 56 62 62" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="60" height="60" style="opacity:0.85">
     </div>
   </div>
   <div class="page-number light">03</div>
@@ -729,34 +726,26 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
         <p class="logo-desc">O logo do Onda Sonora pode ser aplicado em três versões conforme o fundo e contexto de uso. Nunca distorça, recolora ou altere as proporções do logo.</p>
         <div class="logo-grid">
           <div class="logo-box">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="96" height="96">
-              <circle cx="60" cy="60" r="54" fill="none" stroke="#1B2A4A" stroke-width="3"/>
-              <text x="60" y="16" text-anchor="middle" fill="#1B2A4A" font-size="7" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
-              <polyline points="8,60 20,60 26,42 32,78 38,50 44,70 50,56 56,66 62,53 68,69 74,45 80,73 86,60 100,60" fill="none" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M 8 82 Q 20 73 32 82 Q 44 91 56 82 Q 68 73 80 82 Q 92 91 104 82" fill="none" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round"/>
-              <path d="M 8 92 Q 20 83 32 92 Q 44 101 56 92 Q 68 83 80 92 Q 92 101 104 92" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-            </svg>
+            <img src="imagens_coss/logo-transparent.png" alt="Logo Versão Principal" width="96" height="96">
             <p>Versão Principal<br><strong>Fundo Claro</strong></p>
           </div>
           <div class="logo-box dark">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="96" height="96">
-              <circle cx="60" cy="60" r="54" fill="none" stroke="white" stroke-width="3"/>
-              <text x="60" y="16" text-anchor="middle" fill="white" font-size="7" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
-              <polyline points="8,60 20,60 26,42 32,78 38,50 44,70 50,56 56,66 62,53 68,69 74,45 80,73 86,60 100,60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M 8 82 Q 20 73 32 82 Q 44 91 56 82 Q 68 73 80 82 Q 92 91 104 82" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              <path d="M 8 92 Q 20 83 32 92 Q 44 101 56 92 Q 68 83 80 92 Q 92 101 104 92" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+            <img src="imagens_coss/logo-branco.png" alt="Logo Versão Negativa Navy" width="96" height="96">
             <p>Versão Negativa<br><strong>Fundo Navy</strong></p>
           </div>
           <div class="logo-box marsala">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="96" height="96">
-              <circle cx="60" cy="60" r="54" fill="none" stroke="white" stroke-width="3"/>
-              <text x="60" y="16" text-anchor="middle" fill="white" font-size="7" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
-              <polyline points="8,60 20,60 26,42 32,78 38,50 44,70 50,56 56,66 62,53 68,69 74,45 80,73 86,60 100,60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M 8 82 Q 20 73 32 82 Q 44 91 56 82 Q 68 73 80 82 Q 92 91 104 82" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              <path d="M 8 92 Q 20 83 32 92 Q 44 101 56 92 Q 68 83 80 92 Q 92 101 104 92" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+            <img src="imagens_coss/logo-branco.png" alt="Logo Versão Negativa Marsala" width="96" height="96">
             <p>Versão Negativa<br><strong>Fundo Marsala</strong></p>
+          </div>
+        </div>
+        <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="text-align:center">
+            <img src="imagens_coss/logo-oficial.png" alt="Logo Oficial COSS" style="max-width:100%;border-radius:10px">
+            <p style="font-size:11px;color:#777;margin-top:6px;font-weight:600">Logo Oficial</p>
+          </div>
+          <div style="text-align:center">
+            <img src="imagens_coss/logo-tipos.png" alt="Variações Tipográficas do Logo COSS" style="max-width:100%;border-radius:10px">
+            <p style="font-size:11px;color:#777;margin-top:6px;font-weight:600">Variações Tipográficas</p>
           </div>
         </div>
         <div class="logo-rules">
@@ -771,11 +760,11 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
             <div style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;margin-bottom:8px;letter-spacing:1px">Tamanho Mínimo</div>
             <div style="display:flex;gap:20px;align-items:flex-end">
               <div style="text-align:center">
-                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><circle cx="30" cy="30" r="27" fill="none" stroke="#1B2A4A" stroke-width="3"/><text x="30" y="11" text-anchor="middle" fill="#1B2A4A" font-size="4" font-family="Arial" font-weight="700">ONDA</text><polyline points="4,30 12,30 15,21 18,39 21,25 24,35 27,28 30,33 33,26.5 36,34.5 39,22.5 42,36.5 45,30 52,30" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="imagens_coss/logo-transparent.png" alt="Logo mínimo digital" width="30" height="30">
                 <div style="font-size:9px;color:#888;margin-top:4px">Digital<br>30px</div>
               </div>
               <div style="text-align:center">
-                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="44" height="44"><circle cx="30" cy="30" r="27" fill="none" stroke="#1B2A4A" stroke-width="3"/><text x="30" y="11" text-anchor="middle" fill="#1B2A4A" font-size="4" font-family="Arial" font-weight="700">ONDA</text><polyline points="4,30 12,30 15,21 18,39 21,25 24,35 27,28 30,33 33,26.5 36,34.5 39,22.5 42,36.5 45,30 52,30" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="imagens_coss/logo-transparent.png" alt="Logo mínimo impresso" width="44" height="44">
                 <div style="font-size:9px;color:#888;margin-top:4px">Impresso<br>15mm</div>
               </div>
             </div>
@@ -961,30 +950,30 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
           <div class="usage-box correct">
             <div class="usage-tag">✅ Use assim</div>
             <div class="usage-item" style="background:var(--navy)">
-              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="imagens_coss/logo-branco.png" alt="Logo branco" width="38" height="38">
               <span style="color:white;font-size:12px;font-weight:600">Logo branco em fundo Navy</span>
             </div>
             <div class="usage-item" style="background:var(--marsala)">
-              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="imagens_coss/logo-branco.png" alt="Logo branco" width="38" height="38">
               <span style="color:white;font-size:12px;font-weight:600">Logo branco em fundo Marsala</span>
             </div>
             <div class="usage-item" style="background:white;border:1px solid #eee">
-              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="#1B2A4A" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="imagens_coss/logo-transparent.png" alt="Logo Navy" width="38" height="38">
               <span style="color:var(--navy);font-size:12px;font-weight:600">Logo Navy em fundo branco</span>
             </div>
           </div>
           <div class="usage-box wrong">
             <div class="usage-tag">❌ Não use assim</div>
             <div class="usage-item" style="background:#FFD700">
-              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38"><circle cx="25" cy="25" r="22" fill="none" stroke="#FF0000" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="imagens_coss/logo-transparent.png" alt="Logo cores erradas" width="38" height="38" style="filter:hue-rotate(120deg) saturate(3)">
               <span style="color:#333;font-size:12px;font-weight:600">Cores fora da paleta oficial</span>
             </div>
             <div class="usage-item" style="background:#eee">
-              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="38" height="38" style="transform:scaleX(-1)"><circle cx="25" cy="25" r="22" fill="none" stroke="#1B2A4A" stroke-width="2"/><polyline points="3,25 10,25 13,17 16,33 19,21 22,29 25,23 28,27 31,22 34,28 37,18 40,30 43,25 47,25" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="imagens_coss/logo-transparent.png" alt="Logo espelhado" width="38" height="38" style="transform:scaleX(-1)">
               <span style="color:#555;font-size:12px;font-weight:600">Logo espelhado ou rotacionado</span>
             </div>
             <div class="usage-item" style="background:#eee">
-              <svg viewBox="0 0 66 44" xmlns="http://www.w3.org/2000/svg" width="62" height="30"><circle cx="33" cy="22" r="20" fill="none" stroke="#1B2A4A" stroke-width="2"/><polyline points="5,22 13,22 16,14 19,30 22,18 25,26 28,20 31,24 34,18.5 37,23.5 40,14 43,28 46,22 53,22" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="imagens_coss/logo-transparent.png" alt="Logo distorcido" width="62" height="30" style="object-fit:fill">
               <span style="color:#555;font-size:12px;font-weight:600">Logo distorcido / esticado</span>
             </div>
           </div>
@@ -1037,18 +1026,23 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
         <p class="uniform-intro">Veste tecnológica de alta performance. Ambas as opções com o logo oficial circular (Onda + Frequência Sonora) em silk branco.</p>
         <div class="uniform-photos">
           <div class="uniform-photo-card">
-            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (2).jpeg" alt="Camiseta Masculina Deep Navy">
+            <img src="imagens_coss/blusa-masc-oficial.jpeg" alt="Camiseta Masculina Deep Navy">
             <div class="uniform-photo-label">Modelo Masculino</div>
             <div class="uniform-photo-desc">Deep Navy · Logo branco central<br>Número atleta nas costas</div>
           </div>
           <div class="uniform-photo-card">
-            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (1).jpeg" alt="Camiseta Feminina Vital Garnet">
+            <img src="imagens_coss/blusa-fem-oficial.png" alt="Camiseta Feminina Vital Garnet">
             <div class="uniform-photo-label">Modelo Feminino</div>
             <div class="uniform-photo-desc">Vital Garnet · Logo branco central<br>Número atleta nas costas</div>
           </div>
           <div class="uniform-photo-card">
-            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (3).jpeg" alt="Camiseta Staff Sublimada">
-            <div class="uniform-photo-label">Staff / Organização</div>
+            <img src="imagens_coss/staff-masc.jpeg" alt="Camiseta Staff Masculina">
+            <div class="uniform-photo-label">Staff Masculino</div>
+            <div class="uniform-photo-desc">Navy sublimado · Textura ondas<br>Logo peito esquerdo</div>
+          </div>
+          <div class="uniform-photo-card">
+            <img src="imagens_coss/staff-fem.jpeg" alt="Camiseta Staff Feminina">
+            <div class="uniform-photo-label">Staff Feminino</div>
             <div class="uniform-photo-desc">Navy sublimado · Textura ondas<br>Logo peito esquerdo</div>
           </div>
         </div>
@@ -1109,7 +1103,16 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
         <p style="font-size:12.5px;color:#555;margin-bottom:20px;line-height:1.6">Experiência tátil e sustentável. Composto por itens de utilidade prática com a identidade visual oficial do COSS.</p>
         <div class="kit-layout">
           <div class="kit-photo">
-            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (1).jpeg" alt="Kit do Atleta COSS – Ecobag, Squeeze, Número de Peito">
+            <img src="imagens_coss/kit-corrida.jpeg" alt="Kit do Atleta COSS – Visão Geral da Corrida">
+          </div>
+          <div class="kit-photo">
+            <img src="imagens_coss/kit-oficial.png" alt="Kit Oficial COSS – Itens Completos">
+          </div>
+          <div class="kit-photo">
+            <img src="imagens_coss/ecobag-oficial.png" alt="Ecobag Oficial COSS">
+          </div>
+          <div class="kit-photo">
+            <img src="imagens_coss/bone-oficial.png" alt="Boné Oficial COSS">
           </div>
           <div>
             <div class="kit-items-list">
@@ -1191,12 +1194,12 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
         <p class="banners-intro">Elementos visuais e cenográficos que garantem identidade, orientação e experiência imersiva ao longo de todo o percurso do COSS.</p>
         <div class="banners-photos">
           <div class="banner-photo">
-            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (3).jpeg" alt="Windflags e Totens – Hidratação, Largada, Preserve a Praça">
+            <img src="imagens_coss/banners-oficial.png" alt="Windflags e Totens – Hidratação, Largada, Preserve a Praça">
             <div class="banner-photo-label">Windflags e Totens</div>
             <div class="banner-photo-desc">Hidratação · Largada · Preserve a Praça<br>Navy e Marsala com logo branco</div>
           </div>
           <div class="banner-photo">
-            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54.jpeg" alt="Bandeiras e Sinalização Direcional na Praia">
+            <img src="imagens_coss/banner-praia.jpeg" alt="Bandeiras e Sinalização Direcional na Praia">
             <div class="banner-photo-label">Bandeiras e Sinalização Direcional</div>
             <div class="banner-photo-desc">Main Stage · Food Court · Beach Access<br>Windflags Navy e Garnet</div>
           </div>
@@ -1254,7 +1257,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
       </div>
       <div class="portico-body">
         <div class="portico-hero">
-          <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (2).jpeg" alt="Pórtico Inflável Onda Sonora com corredores ao pôr do sol">
+          <img src="imagens_coss/portico-lagoa.png" alt="Pórtico Inflável Onda Sonora com corredores ao pôr do sol">
           <div class="portico-hero-overlay"></div>
           <div class="portico-hero-text">
             <h3>Pórtico Inflável Oficial</h3>
@@ -1315,7 +1318,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
       </div>
       <div class="premiacao-body">
         <div class="premiacao-hero">
-          <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.54 (4).jpeg" alt="Evento ao vivo com palco, luzes e atividades de yoga">
+          <img src="imagens_coss/portico-praca.png" alt="Evento ao vivo com palco, luzes e atividades de yoga">
           <div class="premiacao-hero-overlay"></div>
         </div>
         <div class="premiacao-info">
@@ -1379,7 +1382,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
       <div class="route-body">
         <div class="route-layout">
           <div class="route-photo">
-            <img src="imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53.jpeg" alt="Vista de Saquarema – Mar e Igreja N. Sra. de Nazareth">
+            <img src="imagens_coss/banner-praia.jpeg" alt="Vista de Saquarema – Mar e Igreja N. Sra. de Nazareth">
             <div style="margin-top:12px;padding:12px 14px;background:var(--marsala);border-radius:8px;color:white">
               <div style="font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Local do Evento</div>
               <div style="font-size:13px;font-weight:700">Praça do Coração</div>
@@ -1410,6 +1413,10 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
           Largada/Chegada: Praça do Coração &nbsp;·&nbsp; Hidratação: Col. Gustavo Campos da Silveira<br>
           Sinalização: Cones, windflags e staff completo &nbsp;·&nbsp; Cronometragem eletrônica oficial<br>
           Apoio: Guarda Municipal + Ambulância + Defesa Civil &nbsp;·&nbsp; Aula Yoga: Alto do Morro N. Sra. de Nazareth
+        </div>
+        <div style="margin-top:16px;text-align:center">
+          <img src="imagens_coss/logo-prefeitura.png" alt="Logo Prefeitura de Saquarema – Apoio Institucional" style="max-width:180px;border-radius:8px">
+          <p style="font-size:10px;color:#888;margin-top:6px">Apoio Institucional – Prefeitura de Saquarema</p>
         </div>
       </div>
       <div class="page-number">14</div>
@@ -1471,7 +1478,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
                   <div class="bc-name">Fernanda Koenigsdorf</div>
                   <div class="bc-role">Organizadora · COSS 2026</div>
                 </div>
-                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" width="22" height="22"><circle cx="15" cy="15" r="13" fill="none" stroke="white" stroke-width="2"/><polyline points="2,15 7,15 8.75,10.5 10.5,19.5 12.25,13 14,17.5 15,14.5 16.75,16.5 17.75,13.5 19.25,17.5 21,11 22.25,18.5 23.75,15 27,15" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="imagens_coss/logo-branco.png" alt="Logo" width="22" height="22">
               </div>
               <div class="bc-contact">
                 fernanda@ondasonora.com.br<br>
@@ -1612,13 +1619,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
 
 <!-- ==================== PÁGINA 17: CONTRACAPA ==================== -->
 <div class="page back-cover">
-  <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" width="110" height="110" style="margin-bottom:18px;position:relative;z-index:2">
-    <circle cx="70" cy="70" r="64" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
-    <text x="70" y="22" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="9" font-family="Arial" font-weight="700" letter-spacing="2">ONDA SONORA</text>
-    <polyline points="14,70 28,70 35,49 42,91 49,56 56,84 63,63 70,77 77,59.5 84,80.5 91,52.5 98,87.5 105,70 119,70" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 14 98 Q 28 87.5 42 98 Q 56 108.5 70 98 Q 84 87.5 98 98 Q 112 108.5 126 98" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M 14 110 Q 28 99.5 42 110 Q 56 120.5 70 110 Q 84 99.5 98 110 Q 112 120.5 126 110" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/>
-  </svg>
+  <img src="imagens_coss/logo-branco.png" alt="Logo COSS Onda Sonora" width="110" height="110" style="margin-bottom:18px;position:relative;z-index:2">
   <h2 style="position:relative;z-index:2">Onda Sonora</h2>
   <p style="position:relative;z-index:2">Movimento · Música · Bem-Estar</p>
   <div class="back-contact" style="position:relative;z-index:2">

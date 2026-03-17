@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Projeto COSS – Circuito Onda Sonora Saquarema. Proposta para Lei de Incentivo ao Esporte (Lei 11.438/2006).">
+<meta name="author" content="COSS – Circuito Onda Sonora Saquarema">
 <title>Projeto COSS – Lei de Incentivo ao Esporte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap');
 * { margin:0; padding:0; box-sizing:border-box; }
 :root {
   --navy: #1B2A4A;
@@ -24,10 +29,13 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
   page-break-after: always;
 }
 @media print {
-  body { background: white; }
-  .page { margin: 0; width: 100%; page-break-after: always; }
-  .no-print { display: none; }
+  body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; color-adjust: exact; }
+  .page { margin: 0; width: 100%; page-break-after: always; page-break-inside: avoid; }
+  .no-print { display: none !important; }
+  img { max-width: 100%; page-break-inside: avoid; }
+  .doc-header, .highlight-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+img { image-rendering: -webkit-optimize-contrast; }
 
 /* ===== CABEÇALHO ===== */
 .doc-header {
@@ -51,7 +59,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
 }
 .cover-proj-bg {
   position: absolute; inset: 0;
-  background-image: url('imagens_coss/WhatsApp Image 2026-03-04 at 19.12.53 (2).jpeg');
+  background-image: url('imagens_coss/banner-praia.jpeg');
   background-size: cover;
   background-position: center 20%;
 }
@@ -319,12 +327,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <text x="25" y="8.5" text-anchor="middle" fill="white" font-size="4.5" font-family="Arial" font-weight="700" letter-spacing="1">ONDA SONORA</text>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -380,11 +383,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -437,11 +436,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -512,11 +507,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -585,11 +576,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -663,11 +650,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -896,11 +879,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -1135,11 +1114,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -1215,11 +1190,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -1300,11 +1271,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
 <div class="page">
   <div class="doc-header">
     <div class="doc-header-logo">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <circle cx="25" cy="25" r="22" fill="none" stroke="white" stroke-width="2"/>
-        <polyline points="3,25 9,25 11.5,17.5 14,32.5 16.5,21 19,29 21.5,23.5 24,27 26.5,22 29,28.5 31.5,16.5 34,31 36.5,25 44,25" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 3 33 Q 9 29 15 33 Q 21 37 27 33 Q 33 29 39 33 Q 42 35 45 33" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="36" height="36">
       <div>
         <div style="color:white;font-size:12px;font-weight:800">COSS · ONDA SONORA</div>
         <div class="doc-header-title">Projeto para Lei de Incentivo ao Esporte</div>
@@ -1380,12 +1347,7 @@ tr:last-child td { border-bottom: 2px solid var(--marsala); }
           contato@ondasonora.com.br · ondasonora.com.br
         </div>
       </div>
-      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-        <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
-        <text x="30" y="11" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="5" font-family="Arial" font-weight="700" letter-spacing="1">ONDA SONORA</text>
-        <polyline points="4,30 11,30 13.5,22.5 16,37.5 18.5,26 21,34 23.5,28.5 26,32 28.5,27 31,33.5 33.5,21.5 36,36 38.5,30 45,30" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 4 40 Q 11 36 18 40 Q 25 44 32 40 Q 39 36 46 40 Q 49.5 42 52 40" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="48" height="48" style="opacity:0.7">
     </div>
   </div>
   <div class="doc-footer">
