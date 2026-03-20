@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mídia Kit – Circuito Onda Sonora Saquarema 2026. Proposta de patrocínio para marcas e empresas.">
+<meta name="author" content="COSS – Circuito Onda Sonora Saquarema">
+<title>Mídia Kit COSS – Proposta de Patrocínio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy: #1B2A4A;
+  --marsala: #8B2252;
+  --white: #FFFFFF;
+  --light: #F5F5F5;
+  --gray: #555555;
+  --gold: #C9A84C;
+}
+body { font-family: 'Montserrat', Arial, sans-serif; background: #ccc; }
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+@media print {
+  body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; color-adjust: exact; }
+  .page { margin: 0; width: 100%; page-break-after: always; page-break-inside: avoid; }
+  .no-print { display: none !important; }
+  img { max-width: 100%; page-break-inside: avoid; }
+}
+img { image-rendering: -webkit-optimize-contrast; }
+
+/* ===== HEADER ===== */
+.doc-header {
+  background: var(--navy);
+  padding: 18px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.doc-header-logo { display: flex; align-items: center; gap: 14px; }
+.doc-header-title { color: white; font-size: 10px; font-weight: 300; opacity: 0.65; text-transform: uppercase; letter-spacing: 2px; margin-top: 2px; }
+.doc-header-right { text-align: right; }
+.doc-header-right .doc-type { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 2px; }
+.doc-header-right .doc-ref { font-size: 10px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+
+/* ===== CAPA ===== */
+.cover-mk {
+  min-height: 297mm;
+  position: relative;
+  overflow: hidden;
+}
+.cover-mk-bg {
+  position: absolute; inset: 0;
+  background-image: url('imagens_coss/imagem1.png');
+  background-size: cover;
+  background-position: center 20%;
+}
+.cover-mk-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(27,42,74,0.96) 45%, rgba(139,34,82,0.75) 100%);
+}
+.cover-mk-content {
+  position: relative; z-index: 2;
+  padding: 56px 40px;
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cover-mk-badge {
+  display: inline-block;
+  background: var(--marsala);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 6px 18px;
+  border-radius: 3px;
+  margin-bottom: 28px;
+}
+.cover-mk h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.cover-mk h2 {
+  color: rgba(255,255,255,0.65);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.cover-mk-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 36px;
+}
+.cover-mk-stat {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 16px 14px;
+  text-align: center;
+}
+.cover-mk-stat-val { font-size: 24px; font-weight: 900; color: white; }
+.cover-mk-stat-lbl { font-size: 9px; color: rgba(255,255,255,0.55); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+.cover-mk-bottom { color: rgba(255,255,255,0.4); font-size: 10px; line-height: 1.8; }
+.cover-mk-bottom strong { color: rgba(255,255,255,0.7); }
+
+/* ===== CONTEÚDO ===== */
+.page-content { padding: 32px 36px; }
+.section-title {
+  font-size: 22px; font-weight: 900; color: var(--navy);
+  text-transform: uppercase; margin-bottom: 6px; position: relative;
+}
+.section-title::after {
+  content: ''; display: block; width: 46px; height: 4px;
+  background: var(--marsala); margin-top: 8px; margin-bottom: 18px;
+}
+.section-subtitle {
+  font-size: 13px; font-weight: 700; color: var(--marsala);
+  margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.section-text {
+  font-size: 11.5px; color: #444; line-height: 1.85; margin-bottom: 12px;
+}
+.section-text strong { color: var(--navy); }
+
+/* ===== CARDS ===== */
+.cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.cards-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
+.cards-grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 14px 0; }
+.card {
+  border-radius: 8px; padding: 16px; background: #f8f8f8;
+  border-left: 4px solid var(--navy);
+}
+.card.marsala-border { border-left-color: var(--marsala); }
+.card-title { font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px; }
+.card-value { font-size: 22px; font-weight: 900; color: var(--navy); }
+.card-value.marsala { color: var(--marsala); }
+.card-desc { font-size: 10.5px; color: #666; margin-top: 4px; line-height: 1.5; }
+
+/* ===== HIGHLIGHT BOX ===== */
+.highlight-box {
+  background: var(--navy); border-radius: 8px;
+  padding: 18px 22px; margin: 14px 0; color: white;
+}
+.highlight-box.marsala-box { background: var(--marsala); }
+.highlight-box h4 { font-size: 13px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.highlight-box p { font-size: 11.5px; color: rgba(255,255,255,0.78); line-height: 1.8; }
+.highlight-box ul { font-size: 11.5px; color: rgba(255,255,255,0.78); line-height: 2; padding-left: 16px; }
+
+/* ===== TABELAS ===== */
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 11px; }
+th {
+  background: var(--navy); color: white; padding: 9px 12px;
+  text-align: left; font-weight: 700; font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+td { padding: 8px 12px; border-bottom: 1px solid #eee; color: #444; vertical-align: top; }
+tr:nth-child(even) td { background: #f9f9f9; }
+tr:last-child td { border-bottom: 2px solid var(--marsala); }
+.td-highlight { font-weight: 700; color: var(--navy); }
+.td-value { font-weight: 700; color: var(--marsala); }
+
+/* ===== COTAS ===== */
+.cota-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.cota-header {
+  padding: 16px 18px;
+  color: white;
+  position: relative;
+}
+.cota-header h3 { font-size: 16px; font-weight: 900; text-transform: uppercase; }
+.cota-header .cota-price { font-size: 24px; font-weight: 900; margin-top: 4px; }
+.cota-header .cota-sublabel { font-size: 9px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+.cota-body { padding: 14px 18px; background: white; }
+.cota-item { font-size: 10.5px; color: #444; line-height: 2; padding-left: 4px; }
+.cota-item::before { content: "✓ "; color: var(--marsala); font-weight: 700; }
+
+/* ===== ATIVAÇÕES ===== */
+.activation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.activation-card {
+  border-radius: 8px; padding: 18px;
+  background: linear-gradient(135deg, #f8f8f8, #fff);
+  border: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+}
+.activation-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--marsala);
+}
+.activation-icon { font-size: 24px; margin-bottom: 8px; }
+.activation-title { font-size: 12px; font-weight: 800; color: var(--navy); text-transform: uppercase; margin-bottom: 6px; }
+.activation-desc { font-size: 10.5px; color: #666; line-height: 1.6; }
+
+/* ===== FOOTER ===== */
+.doc-footer {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--navy); padding: 9px 36px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.doc-footer-text { font-size: 9px; color: rgba(255,255,255,0.45); }
+.doc-footer-page { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.6); }
+
+/* ===== LIST ITEMS ===== */
+.list-item { font-size: 11.5px; color: #444; line-height: 1.9; padding-left: 4px; }
+.list-item::before { content: "• "; color: var(--marsala); font-weight: 700; }
+
+/* ===== NAV ===== */
+.nav { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 999; }
+.nav button { background: var(--navy); color: white; border: none; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; }
+.nav .print-btn { background: var(--marsala); }
+
+/* ===== CONTRACAPA ===== */
+.back-cover-mk {
+  background: var(--navy);
+  min-height: 297mm;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 60px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.back-cover-mk::before {
+  content: ''; position: absolute;
+  width: 500px; height: 500px; border-radius: 50%;
+  border: 80px solid rgba(139,34,82,0.08); top: -150px; right: -150px;
+}
+.back-cover-mk::after {
+  content: ''; position: absolute;
+  width: 400px; height: 400px; border-radius: 50%;
+  border: 60px solid rgba(139,34,82,0.06); bottom: -120px; left: -120px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav no-print">
+  <button class="print-btn" onclick="window.print()">Salvar como PDF</button>
+</div>
+
+<!-- ==================== PÁGINA 1: CAPA ==================== -->
+<div class="page cover-mk">
+  <div class="cover-mk-bg"></div>
+  <div class="cover-mk-overlay"></div>
+  <div class="cover-mk-content">
+    <div>
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="80" height="80" style="margin-bottom:24px;opacity:0.9">
+      <div class="cover-mk-badge">Proposta Comercial · Patrocínio 2026</div>
+      <h1>Mídia Kit<br>Circuito Onda<br>Sonora</h1>
+      <h2>Saquarema – RJ · Agosto 2026</h2>
+      <div class="cover-mk-stats">
+        <div class="cover-mk-stat">
+          <div class="cover-mk-stat-val">2.000+</div>
+          <div class="cover-mk-stat-lbl">Público Estimado</div>
+        </div>
+        <div class="cover-mk-stat">
+          <div class="cover-mk-stat-val">7h</div>
+          <div class="cover-mk-stat-lbl">Programação</div>
+        </div>
+        <div class="cover-mk-stat">
+          <div class="cover-mk-stat-val">50k+</div>
+          <div class="cover-mk-stat-lbl">Alcance Digital</div>
+        </div>
+        <div class="cover-mk-stat">
+          <div class="cover-mk-stat-val">5km</div>
+          <div class="cover-mk-stat-lbl">Corrida + DJ Set</div>
+        </div>
+      </div>
+    </div>
+    <div class="cover-mk-bottom">
+      <strong>Organizadora:</strong> Fernanda Koenigsdorf · contato@ondasonora.com.br<br>
+      <strong>Instagram:</strong> @circuitoondasonora · <strong>Apoio:</strong> Prefeitura Municipal de Saquarema – RJ
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 2: O EVENTO ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="32" height="32">
+      <div>
+        <div style="color:white;font-size:11px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Mídia Kit · Proposta de Patrocínio</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">01</div>
+      <div class="doc-ref">O Evento</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">O Evento</div>
+
+    <p class="section-text">
+      O <strong>Circuito Onda Sonora Saquarema (COSS)</strong> é um evento híbrido que une <strong>corrida de rua de 5km, aulas coletivas ao ar livre (Yoga e Funcional/Cross Trainee), DJ Set ao vivo</strong> e uma <strong>poderosa causa social</strong>: o combate ao feminicídio e a promoção da sustentabilidade ambiental.
+    </p>
+    <p class="section-text">
+      Realizado na icônica <strong>Praça do Coração</strong>, em Saquarema — cidade reconhecida mundialmente pelo surf e esportes de natureza —, o COSS oferece uma experiência imersiva de <strong>7 horas de programação contínua</strong>, das 17h às 00h, em Agosto de 2026.
+    </p>
+
+    <div class="section-subtitle">Diferenciais Competitivos</div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-title">Formato Híbrido Único</div>
+        <div class="card-desc">Esporte + Música + Causa Social em um único evento. Não existe concorrente direto com essa combinação na Região dos Lagos.</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Causa com Impacto Real</div>
+        <div class="card-desc">O COSS levanta a bandeira contra o feminicídio e produz medalhas de PET reciclado, conectando marcas a valores de responsabilidade social e ambiental.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Localização Premium</div>
+        <div class="card-desc">Saquarema é destino de turismo esportivo, sede do WSL, triathlon e circuito de surf. Público qualificado e engajado o ano todo.</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Potencial de Crescimento</div>
+        <div class="card-desc">1ª edição com meta de 2.000 pessoas. Evento com vocação para se tornar anual e crescente no calendário oficial do município.</div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Números do Evento</div>
+    <div class="cards-grid-4">
+      <div class="card">
+        <div class="card-title">Participantes</div>
+        <div class="card-value">500+</div>
+        <div class="card-desc">Atletas inscritos na corrida</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Público Total</div>
+        <div class="card-value marsala">2.000+</div>
+        <div class="card-desc">Presença estimada</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Duração</div>
+        <div class="card-value">7h</div>
+        <div class="card-desc">Programação 17h–00h</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Alcance Digital</div>
+        <div class="card-value marsala">50k+</div>
+        <div class="card-desc">Impressões estimadas</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Programação Completa</h4>
+      <p>
+        <strong>17h00</strong> – Abertura oficial + DJ Set (recepção) &nbsp;|&nbsp;
+        <strong>17h30</strong> – Aulão de Aquecimento no Palco &nbsp;|&nbsp;
+        <strong>18h00</strong> – Largada da Corrida 5km<br>
+        <strong>18h30</strong> – Aulas de Funcional/Cross Trainee e Yoga &nbsp;|&nbsp;
+        <strong>20h00</strong> – Premiação no Palco &nbsp;|&nbsp;
+        <strong>20h30–23h30</strong> – DJ Headline
+      </p>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Mídia Kit 2026 · Confidencial</div>
+    <div class="doc-footer-page">02</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 3: PÚBLICO E PERFIL ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="32" height="32">
+      <div>
+        <div style="color:white;font-size:11px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Mídia Kit · Proposta de Patrocínio</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">02</div>
+      <div class="doc-ref">Público e Alcance</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Público e Alcance</div>
+
+    <div class="section-subtitle">Perfil do Público</div>
+    <div class="cards-grid-3">
+      <div class="card">
+        <div class="card-title">Faixa Etária</div>
+        <div class="card-value">25–45</div>
+        <div class="card-desc">Adultos ativos, classe B/C, renda média de R$ 4–8 mil</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Gênero</div>
+        <div class="card-value marsala">55%</div>
+        <div class="card-desc">Feminino — evento com forte apelo à causa da mulher</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Estilo de Vida</div>
+        <div class="card-value" style="font-size:16px">ATIVO</div>
+        <div class="card-desc">Praticantes de corrida, yoga, funcional, surf, triathlon</div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Comportamento e Interesses</div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-title">Consumo</div>
+        <div class="card-desc">Compradores recorrentes de artigos esportivos, suplementos, moda fitness e produtos sustentáveis. Engajados com marcas que possuem propósito.</div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Digital</div>
+        <div class="card-desc">Alta presença no Instagram e WhatsApp. Compartilham experiências esportivas e causas sociais. Influenciadores orgânicos em suas comunidades.</div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Alcance e Cobertura Midiática</div>
+    <table>
+      <tr><th>Canal</th><th>Alcance Estimado</th><th>Formato</th></tr>
+      <tr><td class="td-highlight">Instagram @circuitoondasonora</td><td class="td-value">30.000+ impressões</td><td>Reels, stories, posts (antes/durante/depois)</td></tr>
+      <tr><td class="td-highlight">Influenciadores Locais</td><td class="td-value">15.000+ alcance</td><td>Parcerias com atletas e perfis fitness regionais</td></tr>
+      <tr><td class="td-highlight">Assessoria de Imprensa</td><td class="td-value">Mídia regional + digital</td><td>Matérias em portais, rádios e TV locais</td></tr>
+      <tr><td class="td-highlight">Evento Presencial</td><td class="td-value">2.000+ pessoas</td><td>Exposição direta de marca por 7 horas</td></tr>
+      <tr><td class="td-highlight">Conteúdo Pós-evento</td><td class="td-value">Vídeo + fotos profissionais</td><td>Drone, filmmaker, reels com entrega de conteúdo</td></tr>
+    </table>
+
+    <div class="section-subtitle">Abrangência Geográfica</div>
+    <p class="section-text">
+      O evento atrai público de <strong>11 municípios da Região dos Lagos</strong> (Saquarema, Araruama, São Pedro da Aldeia, Cabo Frio, Búzios, Maricá, entre outros), além da <strong>Região Metropolitana do Rio de Janeiro</strong> (Niterói, Rio de Janeiro, São Gonçalo). Potencial de atrair 30%+ de participantes de fora do município.
+    </p>
+
+    <div class="highlight-box marsala-box">
+      <h4>Por que seu público está no COSS?</h4>
+      <p>O participante do COSS é um <strong>consumidor ativo e engajado</strong>: compra tênis de corrida, frequenta academia, consome produtos fitness e naturais, viaja para eventos esportivos e está disposto a pagar por experiências. É exatamente o perfil que marcas esportivas, de bem-estar e lifestyle buscam alcançar.</p>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Mídia Kit 2026 · Confidencial</div>
+    <div class="doc-footer-page">03</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 4: O QUE SUA MARCA GANHA ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="32" height="32">
+      <div>
+        <div style="color:white;font-size:11px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Mídia Kit · Proposta de Patrocínio</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">03</div>
+      <div class="doc-ref">Retorno para a Marca</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">O que sua marca ganha</div>
+
+    <p class="section-text">
+      Patrocinar o COSS é muito mais do que visibilidade — é <strong>associar sua marca a movimento, propósito e comunidade</strong>. Sua empresa se posiciona ao lado de valores como esporte, saúde, combate ao feminicídio e sustentabilidade ambiental.
+    </p>
+
+    <div class="section-subtitle">Espaços de Visibilidade</div>
+    <div class="activation-grid">
+      <div class="activation-card">
+        <div class="activation-icon">👕</div>
+        <div class="activation-title">Camisetas da Corrida</div>
+        <div class="activation-desc">Logo estampado em 500+ camisetas oficiais dos atletas, usadas no evento e após — exposição contínua.</div>
+      </div>
+      <div class="activation-card">
+        <div class="activation-icon">🏁</div>
+        <div class="activation-title">Pórtico de Largada/Chegada</div>
+        <div class="activation-desc">Logo em destaque no pórtico inflável de 8m, ponto focal de todas as fotos e conteúdo do evento.</div>
+      </div>
+      <div class="activation-card">
+        <div class="activation-icon">🎤</div>
+        <div class="activation-title">Palco Principal</div>
+        <div class="activation-desc">Backdrop, banners e menções verbais durante 7h de evento, incluindo premiação e DJ Set.</div>
+      </div>
+      <div class="activation-card">
+        <div class="activation-icon">📱</div>
+        <div class="activation-title">Conteúdo Digital</div>
+        <div class="activation-desc">Posts, reels e stories antes, durante e depois do evento. Vídeo aéreo com drone + filmmaker profissional.</div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Oportunidades de Ativação</div>
+    <div class="activation-grid">
+      <div class="activation-card">
+        <div class="activation-icon">🏪</div>
+        <div class="activation-title">Stand da Marca</div>
+        <div class="activation-desc">Tenda exclusiva no evento para exposição de produtos, degustação, brindes e interação direta com 2.000+ pessoas.</div>
+      </div>
+      <div class="activation-card">
+        <div class="activation-icon">👟</div>
+        <div class="activation-title">Experiência de Produto</div>
+        <div class="activation-desc">Teste de tênis (running experience), distribuição de amostras, vouchers exclusivos para participantes.</div>
+      </div>
+      <div class="activation-card">
+        <div class="activation-icon">🏆</div>
+        <div class="activation-title">Naming Rights</div>
+        <div class="activation-desc">Seu nome no título: "Corrida COSS by [Sua Marca]". Exclusividade total no segmento esportivo.</div>
+      </div>
+      <div class="activation-card">
+        <div class="activation-icon">🎁</div>
+        <div class="activation-title">Kit do Atleta</div>
+        <div class="activation-desc">Inclusão de produto ou brinde em 500+ kits entregues aos atletas: ecobag, squeeze, medalha, camiseta.</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Associação a Causas de Alto Impacto</h4>
+      <ul>
+        <li><strong>Combate ao feminicídio:</strong> Sua marca apoia uma causa urgente e ganha visibilidade social positiva</li>
+        <li><strong>Sustentabilidade:</strong> Medalhas de PET reciclado, copos reutilizáveis e lixo zero — ESG na prática</li>
+        <li><strong>Inclusão:</strong> Acesso gratuito às aulas coletivas para a comunidade — impacto social real</li>
+      </ul>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Mídia Kit 2026 · Confidencial</div>
+    <div class="doc-footer-page">04</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 5: COTAS DE PATROCÍNIO ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="32" height="32">
+      <div>
+        <div style="color:white;font-size:11px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Mídia Kit · Proposta de Patrocínio</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">04</div>
+      <div class="doc-ref">Cotas de Patrocínio</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Cotas de Patrocínio</div>
+
+    <p class="section-text">
+      Escolha a cota que melhor se encaixa na estratégia da sua marca. Todas as cotas incluem prestação de contas com relatório de mídia e impacto.
+    </p>
+
+    <!-- COTA MASTER -->
+    <div class="cota-card" style="margin-bottom:14px">
+      <div class="cota-header" style="background:linear-gradient(135deg, var(--navy), var(--marsala))">
+        <div class="cota-sublabel">Exclusiva · 1 Vaga</div>
+        <h3>Cota Master — Naming Rights</h3>
+        <div class="cota-price">A partir de R$ 50.000</div>
+      </div>
+      <div class="cota-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="cota-item">Nome no título do evento ("Corrida COSS by [Marca]")</div>
+          <div class="cota-item">Logo em TODAS as faces do pórtico inflável 8m</div>
+          <div class="cota-item">Logo na frente da camiseta oficial (500+ un.)</div>
+          <div class="cota-item">Blimp inflável exclusivo no evento</div>
+          <div class="cota-item">Tenda VIP exclusiva para ativação de marca</div>
+          <div class="cota-item">50 kits premium para convidados da marca</div>
+          <div class="cota-item">Ação de marca no palco principal</div>
+          <div class="cota-item">Logo em TODA comunicação (digital + impressa)</div>
+          <div class="cota-item">10+ posts e reels dedicados nas redes sociais</div>
+          <div class="cota-item">Vídeo pós-evento com menção exclusiva</div>
+          <div class="cota-item">Exclusividade no segmento esportivo</div>
+          <div class="cota-item">Relatório completo de mídia e impacto</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COTAS DIAMANTE E OURO -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+      <div class="cota-card">
+        <div class="cota-header" style="background:var(--navy)">
+          <div class="cota-sublabel">Até 3 Vagas</div>
+          <h3>Cota Diamante</h3>
+          <div class="cota-price">R$ 30.000</div>
+        </div>
+        <div class="cota-body">
+          <div class="cota-item">Logo destaque no pórtico</div>
+          <div class="cota-item">Logo na camiseta (costas)</div>
+          <div class="cota-item">2 windflags exclusivos</div>
+          <div class="cota-item">30 kits para convidados</div>
+          <div class="cota-item">Tenda de patrocinador</div>
+          <div class="cota-item">5 posts nas redes sociais</div>
+          <div class="cota-item">Menção em toda comunicação</div>
+        </div>
+      </div>
+      <div class="cota-card">
+        <div class="cota-header" style="background:var(--marsala)">
+          <div class="cota-sublabel">Até 5 Vagas</div>
+          <h3>Cota Ouro</h3>
+          <div class="cota-price">R$ 15.000</div>
+        </div>
+        <div class="cota-body">
+          <div class="cota-item">Logo no backdrop premiação</div>
+          <div class="cota-item">1 windflag no percurso</div>
+          <div class="cota-item">15 kits para convidados</div>
+          <div class="cota-item">3 posts nas redes sociais</div>
+          <div class="cota-item">Distribuição de brindes</div>
+          <div class="cota-item">Presença em materiais digitais</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COTAS PRATA E APOIO -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="cota-card">
+        <div class="cota-header" style="background:#555">
+          <div class="cota-sublabel">Até 8 Vagas</div>
+          <h3>Cota Prata</h3>
+          <div class="cota-price">R$ 7.000</div>
+        </div>
+        <div class="cota-body">
+          <div class="cota-item">Logo nos materiais impressos</div>
+          <div class="cota-item">10 kits para convidados</div>
+          <div class="cota-item">2 posts nas redes sociais</div>
+          <div class="cota-item">Distribuição de amostras</div>
+        </div>
+      </div>
+      <div class="cota-card">
+        <div class="cota-header" style="background:#888">
+          <div class="cota-sublabel">Ilimitado</div>
+          <h3>Apoio / Permuta</h3>
+          <div class="cota-price">Permuta de Produto</div>
+        </div>
+        <div class="cota-body">
+          <div class="cota-item">Logo em local específico</div>
+          <div class="cota-item">Menção nas redes sociais</div>
+          <div class="cota-item">Distribuição de produto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Mídia Kit 2026 · Confidencial</div>
+    <div class="doc-footer-page">05</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 6: IDENTIDADE VISUAL E MATERIAIS ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="32" height="32">
+      <div>
+        <div style="color:white;font-size:11px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Mídia Kit · Proposta de Patrocínio</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">05</div>
+      <div class="doc-ref">Identidade Visual e Materiais</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Identidade Visual e Materiais</div>
+
+    <p class="section-text">
+      O COSS possui <strong>identidade visual profissional completa</strong>, com manual de marca, comunicação padronizada e materiais de alta qualidade. A marca do patrocinador será integrada com excelência em todos os pontos de contato.
+    </p>
+
+    <!-- Grid de imagens dos materiais -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0">
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.1)">
+        <img src="imagens_coss/kit-oficial.png" alt="Kit Oficial do Atleta" style="width:100%;height:180px;object-fit:cover">
+        <div style="background:var(--navy);padding:9px 14px;color:white;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px">Kit do Atleta Oficial</div>
+        <div style="background:#f8f8f8;padding:8px 14px;font-size:10px;color:#666;line-height:1.5">Camiseta + Ecobag + Squeeze + Medalha PET + Número de peito</div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.1)">
+        <img src="imagens_coss/banners-oficial.png" alt="Banners e Sinalização" style="width:100%;height:180px;object-fit:cover">
+        <div style="background:var(--marsala);padding:9px 14px;color:white;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px">Banners e Sinalização</div>
+        <div style="background:#f8f8f8;padding:8px 14px;font-size:10px;color:#666;line-height:1.5">Windflags, totens, backdrops e blimp com espaço para logo do patrocinador</div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.1)">
+        <img src="imagens_coss/portico-lagoa.png" alt="Pórtico de Largada" style="width:100%;height:180px;object-fit:cover">
+        <div style="background:var(--navy);padding:9px 14px;color:white;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px">Pórtico Inflável 8m</div>
+        <div style="background:#f8f8f8;padding:8px 14px;font-size:10px;color:#666;line-height:1.5">4 faces com logo · Ponto focal de foto e conteúdo · Largada e chegada</div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.1)">
+        <img src="imagens_coss/portico-praca.png" alt="Palco e Evento" style="width:100%;height:180px;object-fit:cover;object-position:center 30%">
+        <div style="background:var(--marsala);padding:9px 14px;color:white;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px">Palco + Praça do Coração</div>
+        <div style="background:#f8f8f8;padding:8px 14px;font-size:10px;color:#666;line-height:1.5">Backdrop patrocinador, menções verbais, DJ Set com exposição contínua</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0">
+      <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.08)">
+        <img src="imagens_coss/blusa-fem-oficial.png" alt="Camiseta Feminina" style="width:100%;height:130px;object-fit:cover;object-position:top">
+        <div style="background:var(--navy);padding:7px 10px;font-size:10px;font-weight:800;color:white;text-transform:uppercase">Camiseta Feminina</div>
+      </div>
+      <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.08)">
+        <img src="imagens_coss/ecobag-oficial.png" alt="Ecobag Oficial" style="width:100%;height:130px;object-fit:cover">
+        <div style="background:var(--marsala);padding:7px 10px;font-size:10px;font-weight:800;color:white;text-transform:uppercase">Ecobag Oficial</div>
+      </div>
+      <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.08)">
+        <img src="imagens_coss/bone-oficial.png" alt="Boné Oficial" style="width:100%;height:130px;object-fit:cover">
+        <div style="background:var(--navy);padding:7px 10px;font-size:10px;font-weight:800;color:white;text-transform:uppercase">Boné Oficial</div>
+      </div>
+    </div>
+
+    <div class="highlight-box marsala-box">
+      <h4>Prova Social</h4>
+      <p>O evento já conta com <strong>apoio institucional da Prefeitura de Saquarema</strong>, identidade visual profissional completa (manual de marca com 16 páginas), materiais de comunicação prontos e equipe de produção experiente. Sua marca entra em um projeto estruturado e confiável.</p>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Mídia Kit 2026 · Confidencial</div>
+    <div class="doc-footer-page">06</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 7: CONTATO E PRÓXIMOS PASSOS ==================== -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-header-logo">
+      <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="32" height="32">
+      <div>
+        <div style="color:white;font-size:11px;font-weight:800">COSS · ONDA SONORA</div>
+        <div class="doc-header-title">Mídia Kit · Proposta de Patrocínio</div>
+      </div>
+    </div>
+    <div class="doc-header-right">
+      <div class="doc-type">06</div>
+      <div class="doc-ref">Próximos Passos</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="section-title">Próximos Passos</div>
+
+    <p class="section-text">
+      Estamos buscando parceiros que compartilhem dos mesmos valores: <strong>esporte, bem-estar, causa social e sustentabilidade</strong>. Se sua marca se identifica com o COSS, vamos conversar.
+    </p>
+
+    <div class="section-subtitle">Processo de Parceria</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:14px 0">
+      <div style="background:var(--navy);border-radius:8px;padding:20px;text-align:center;color:white">
+        <div style="font-size:32px;font-weight:900;color:var(--marsala)">01</div>
+        <div style="font-size:12px;font-weight:800;margin:8px 0 6px;text-transform:uppercase">Contato Inicial</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);line-height:1.6">Envie e-mail com assunto "Parceria/Patrocínio COSS" para iniciar a conversa</div>
+      </div>
+      <div style="background:var(--marsala);border-radius:8px;padding:20px;text-align:center;color:white">
+        <div style="font-size:32px;font-weight:900;color:rgba(255,255,255,0.7)">02</div>
+        <div style="font-size:12px;font-weight:800;margin:8px 0 6px;text-transform:uppercase">Proposta Personalizada</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);line-height:1.6">Montamos uma proposta sob medida com benefícios e ativações alinhadas à sua marca</div>
+      </div>
+      <div style="background:var(--navy);border-radius:8px;padding:20px;text-align:center;color:white">
+        <div style="font-size:32px;font-weight:900;color:var(--marsala)">03</div>
+        <div style="font-size:12px;font-weight:800;margin:8px 0 6px;text-transform:uppercase">Formalização</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);line-height:1.6">Contrato, cronograma de entregas e início da produção com logo do patrocinador</div>
+      </div>
+    </div>
+
+    <div class="section-subtitle">Benefício Fiscal (Lei de Incentivo ao Esporte)</div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-title">Para Empresas (Lucro Real)</div>
+        <div class="card-desc">
+          <strong>Lei 11.438/2006:</strong> Dedução de até 1% do IRPJ + CSLL devidos ao patrocinar o COSS via SALIC Esporte. O projeto é elegível ao incentivo fiscal, reduzindo o custo líquido do patrocínio em até 50%.
+        </div>
+      </div>
+      <div class="card marsala-border">
+        <div class="card-title">Custo Real do Patrocínio</div>
+        <div class="card-desc">
+          Um patrocínio de <strong>R$ 50.000</strong> pode ter custo líquido de apenas <strong>R$ 25.000–30.000</strong> após dedução fiscal. Sua marca ganha visibilidade máxima com investimento reduzido.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:var(--navy);border-radius:12px;padding:28px 30px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(139,34,82,0.2)"></div>
+      <div style="position:relative;z-index:2">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Contato da Organizadora</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div>
+            <div style="font-size:16px;font-weight:900;color:white;margin-bottom:4px">Fernanda Koenigsdorf</div>
+            <div style="font-size:11px;color:var(--marsala);font-weight:700;margin-bottom:12px">Organizadora – COSS 2026</div>
+            <div style="font-size:11.5px;color:rgba(255,255,255,0.75);line-height:2.2">
+              contato@ondasonora.com.br<br>
+              ondasonora.com.br<br>
+              Instagram: @circuitoondasonora
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center">
+            <img src="imagens_coss/logo-branco.png" alt="Logo COSS" width="100" height="100" style="opacity:0.6">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;text-align:center;padding:14px;background:#f8f8f8;border-radius:8px;border-left:4px solid var(--marsala)">
+      <p style="font-size:12px;color:var(--navy);font-weight:700">Assunto do e-mail: "Parceria/Patrocínio – Circuito Onda Sonora Saquarema 2026"</p>
+      <p style="font-size:10.5px;color:#888;margin-top:4px">Inclua: nome completo, empresa, telefone e cota de interesse</p>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <div class="doc-footer-text">COSS – Circuito Onda Sonora Saquarema · Mídia Kit 2026 · Confidencial</div>
+    <div class="doc-footer-page">07</div>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 8: CONTRACAPA ==================== -->
+<div class="page back-cover-mk">
+  <img src="imagens_coss/logo-branco.png" alt="Logo COSS Onda Sonora" width="120" height="120" style="margin-bottom:20px;position:relative;z-index:2">
+  <h2 style="font-size:42px;font-weight:900;color:white;text-transform:uppercase;position:relative;z-index:2;margin-bottom:8px">Onda Sonora</h2>
+  <p style="font-size:15px;color:rgba(255,255,255,0.55);position:relative;z-index:2;margin-bottom:8px">Movimento · Música · Consciência · Bem-Estar</p>
+  <p style="font-size:11px;color:rgba(255,255,255,0.35);position:relative;z-index:2;margin-bottom:30px;letter-spacing:2px;text-transform:uppercase">Proposta de Patrocínio · Agosto 2026</p>
+  <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:24px 40px;position:relative;z-index:2;text-align:center">
+    <p style="font-size:14px;font-weight:800;color:white;margin-bottom:10px">COSS – Circuito Onda Sonora Saquarema</p>
+    <p style="font-size:11.5px;color:rgba(255,255,255,0.65);line-height:2">
+      Praça do Coração · Saquarema – RJ<br>
+      Agosto de 2026 · 17h às 00h<br>
+      contato@ondasonora.com.br<br>
+      ondasonora.com.br · @circuitoondasonora
+    </p>
+    <div style="margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <span style="background:var(--marsala);color:white;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px">Corrida 5km</span>
+      <span style="background:var(--marsala);color:white;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px">DJ Set</span>
+      <span style="background:var(--marsala);color:white;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px">Yoga + Funcional</span>
+      <span style="background:var(--marsala);color:white;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px">Anti-Feminicídio</span>
+      <span style="background:var(--marsala);color:white;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px">Sustentabilidade</span>
+    </div>
+  </div>
+  <p style="font-size:9px;color:rgba(255,255,255,0.25);margin-top:26px;position:relative;z-index:2">© 2026 COSS Onda Sonora. Documento confidencial. Todos os direitos reservados.</p>
+</div>
+
+</body>
+</html>
